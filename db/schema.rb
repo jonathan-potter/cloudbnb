@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131005192040) do
+ActiveRecord::Schema.define(:version => 20131005204018) do
 
   create_table "spaces", :force => true do |t|
     t.integer  "owner_id",             :null => false
@@ -31,7 +31,6 @@ ActiveRecord::Schema.define(:version => 20131005192040) do
     t.text     "house_rules",          :null => false
     t.string   "address",              :null => false
     t.string   "city",                 :null => false
-    t.string   "state",                :null => false
     t.string   "country",              :null => false
     t.float    "latitude",             :null => false
     t.float    "longitude",            :null => false
@@ -42,6 +41,8 @@ ActiveRecord::Schema.define(:version => 20131005192040) do
   add_index "spaces", ["booking_rate_daily"], :name => "index_spaces_on_booking_rate_daily"
   add_index "spaces", ["booking_rate_monthly"], :name => "index_spaces_on_booking_rate_monthly"
   add_index "spaces", ["booking_rate_weekly"], :name => "index_spaces_on_booking_rate_weekly"
+  add_index "spaces", ["latitude"], :name => "index_spaces_on_latitude"
+  add_index "spaces", ["longitude"], :name => "index_spaces_on_longitude"
   add_index "spaces", ["owner_id"], :name => "index_spaces_on_owner_id"
 
   create_table "users", :force => true do |t|
