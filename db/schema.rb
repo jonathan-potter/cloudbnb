@@ -11,15 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131005204018) do
+ActiveRecord::Schema.define(:version => 20131006001534) do
 
   create_table "spaces", :force => true do |t|
     t.integer  "owner_id",             :null => false
     t.string   "title",                :null => false
     t.integer  "booking_rates",        :null => false
-    t.float    "booking_rate_daily",   :null => false
-    t.float    "booking_rate_weekly",  :null => false
-    t.float    "booking_rate_monthly", :null => false
+    t.integer  "booking_rate_daily"
+    t.integer  "booking_rate_weekly"
+    t.integer  "booking_rate_monthly"
     t.integer  "residence_type",       :null => false
     t.integer  "bedroom_count",        :null => false
     t.integer  "bathroom_count",       :null => false
@@ -32,8 +32,8 @@ ActiveRecord::Schema.define(:version => 20131005204018) do
     t.string   "address",              :null => false
     t.string   "city",                 :null => false
     t.string   "country",              :null => false
-    t.float    "latitude",             :null => false
-    t.float    "longitude",            :null => false
+    t.float    "latitude"
+    t.float    "longitude"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
   end

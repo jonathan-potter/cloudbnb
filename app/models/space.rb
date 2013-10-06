@@ -2,11 +2,14 @@ class Space < ActiveRecord::Base
   attr_accessible :owner_id, :title, :booking_rates, :booking_rate_daily,
   :booking_rate_weekly, :booking_rate_monthly, :residence_type, :bedroom_count,
   :bathroom_count, :room_type, :bed_type, :accommodates, :amenities, :description,
-  :house_rules, :address, :city, :country, :latitude, :longitude
+  :house_rules, :address, :city, :country, :latitude, :longitude,
+  :amenities_indicies, :booking_rate_indicies
 
   geocoded_by :address
 
-  # validates
+  validates_presence_of :owner_id, :title, :booking_rates, :residence_type,
+  :bedroom_count, :bathroom_count, :room_type, :bed_type, :accommodates,
+  :amenities, :description, :house_rules, :address, :city, :country
 
   after_validation :geocode, if: :address_changed?
 
@@ -61,4 +64,23 @@ class Space < ActiveRecord::Base
      "Washer",
      "Dryer"]
   end
+
+  def self.integer_from_options_list(options_list)
+    # convert options list given by radio buttons into one-hot integer
+    amenities = 0;
+    options_list.each do |option|
+      amenities += 2 ** option.to_i
+    end
+
+    amenities
+  end
+
+  def set_amenities_from_options_list!(options_list)
+    self.amenities = Space.integer_from_options_list(options_list)
+  end
+
+  def set_booking_rates_from_options_list!(options_list)
+    self.booking_rates = Space.integer_from_options_list(options_list)
+  end
+
 end

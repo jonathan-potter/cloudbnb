@@ -29,7 +29,7 @@
        <ul id="space-booking_rates">
          <% Space.booking_rates.each_with_index do |booking_rate, index| %>
            <li>
-             <input type="checkbox" name="space[booking_rate][]" value="<%= index %>">
+             <input type="checkbox" name="space_booking_rates_indicies[]" value="<%= index %>">
                <%= booking_rate %>
              </input>
              <input type="number" value="space[booking_rate_<%= booking_rate.downcase %>_]">
@@ -37,9 +37,6 @@
            </li>
          <% end %>
        </ul><br>
-
-
-
 
   <label for="space-residence-type">Home Type</label><br>
     <select type="text" name="space[residence_type]" id="space-residence-type">
@@ -56,7 +53,7 @@
     </select><br>
 
   <label for="space-bathroom-count">Bathroom Count</label><br>
-    <select type="text" name="space[bathroom-count]" id="space-bedroom-count">
+    <select type="text" name="space[bathroom_count]" id="space-bedroom-count">
       <% Space.numerical_options.each_with_index do |bathroom_count, index| %>
         <option value="<%= index %>"><%= bathroom_count %></option>
       <% end %>
@@ -77,7 +74,7 @@
     </select><br>
 
   <label for="space-accomodates">Accommodates</label><br>
-    <select type="text" name="space[accomodates]" id="space-accomodates">
+    <select type="text" name="space[accommodates]" id="space-accomodates">
       <% Space.numerical_options.each_with_index do |accomodates, index| %>
         <option value="<%= index %>"><%= accomodates %></option>
       <% end %>
@@ -87,12 +84,12 @@
     <ul id="space-amenities">
       <% Space.amenities_list.each_with_index do |amenity, index| %>
         <li>
-          <input type="checkbox" name="space[amenities][]" value="<%= index %>">
+          <input type="checkbox" name="space_amenities_indicies[]" value="<%= index %>">
             <%= amenity %>
           </input>
         </li>
       <% end %>
     </ul><br>
 
-  <p><input type="submit" value="Sign up"></p>
+  <p><input type="submit" value="Create space"></p>
 </form>
