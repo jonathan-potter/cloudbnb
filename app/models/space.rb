@@ -1,6 +1,13 @@
 class Space < ActiveRecord::Base
-  attr_accessible :somanythings
+  attr_accessible :owner_id, :title, :booking_rates, :booking_rate_daily,
+  :booking_rate_weekly, :booking_rate_monthly, :residence_type, :bedroom_count,
+  :bathroom_count, :room_type, :bed_type, :accommodates, :amenities, :description,
+  :house_rules, :address, :city, :country, :latitude, :longitude
+
   geocoded_by :address
+
+  # validates
+
   after_validation :geocode, if: :address_changed?
 
   def self.booking_rates
@@ -25,7 +32,7 @@ class Space < ActiveRecord::Base
     ["Real Bed"]
   end
 
-  def self.accommodates_list
+  def self.numerical_options
     ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16+"]
   end
 

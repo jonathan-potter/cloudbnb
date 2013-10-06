@@ -1,0 +1,98 @@
+<form action="<%= spaces_url %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <label for="space-title">Space Title</label><br>
+    <input type="text" name="space[title]" id="space-title"
+     value="<%= @space.title %>"><br>
+
+  <label for="space-address">Address</label><br>
+    <input type="text" name="space[address]" id="space-address"
+     value="<%= @space.address %>"><br>
+
+  <label for="space-country">Country</label><br>
+    <input type="text" name="space[country]" id="space-country"
+     value="<%= @space.country %>"><br>
+
+  <label for="space-city">City</label><br>
+    <input type="text" name="space[city]" id="space-city"
+     value="<%= @space.city %>"><br>
+
+  <label for="space-description">Description</label><br>
+    <textarea type="text" name="space[description]" id="space-description"
+     value="<%= @space.description %>"></textarea><br>
+
+  <label for="space-house_rules">House Rules</label><br>
+    <textarea type="text" name="space[house_rules]" id="space-house_rules"
+     value="<%= @space.house_rules %>"></textarea><br>
+
+     <label for="space-booking_rates">Rate Plans</label><br>
+       <ul id="space-booking_rates">
+         <% Space.booking_rates.each_with_index do |booking_rate, index| %>
+           <li>
+             <input type="checkbox" name="space[booking_rate][]" value="<%= index %>">
+               <%= booking_rate %>
+             </input>
+             <input type="number" value="space[booking_rate_<%= booking_rate.downcase %>_]">
+             </input>
+           </li>
+         <% end %>
+       </ul><br>
+
+
+
+
+  <label for="space-residence-type">Home Type</label><br>
+    <select type="text" name="space[residence_type]" id="space-residence-type">
+      <% Space.residence_types.each_with_index do |residence_type, index| %>
+        <option value="<%= index %>"><%= residence_type %></option>
+      <% end %>
+    </select><br>
+
+  <label for="space-bedroom-count">Bedroom Count</label><br>
+    <select type="text" name="space[bedroom_count]" id="space-bedroom-count">
+      <% Space.numerical_options.each_with_index do |bedroom_count, index| %>
+        <option value="<%= index %>"><%= bedroom_count %></option>
+      <% end %>
+    </select><br>
+
+  <label for="space-bathroom-count">Bathroom Count</label><br>
+    <select type="text" name="space[bathroom-count]" id="space-bedroom-count">
+      <% Space.numerical_options.each_with_index do |bathroom_count, index| %>
+        <option value="<%= index %>"><%= bathroom_count %></option>
+      <% end %>
+    </select><br>
+
+  <label for="space-room-type">Room Type</label><br>
+    <select type="text" name="space[room_type]" id="space-room-type">
+      <% Space.room_types.each_with_index do |room_type, index| %>
+        <option value="<%= index %>"><%= room_type %></option>
+      <% end %>
+    </select><br>
+
+  <label for="space-bed-type">Bed Type</label><br>
+    <select type="text" name="space[bed_type]" id="space-bed-type">
+      <% Space.bed_types.each_with_index do |bed_type, index| %>
+        <option value="<%= index %>"><%= bed_type %></option>
+      <% end %>
+    </select><br>
+
+  <label for="space-accomodates">Accommodates</label><br>
+    <select type="text" name="space[accomodates]" id="space-accomodates">
+      <% Space.numerical_options.each_with_index do |accomodates, index| %>
+        <option value="<%= index %>"><%= accomodates %></option>
+      <% end %>
+    </select><br>
+
+  <label for="space-amenities">Amenities</label><br>
+    <ul id="space-amenities">
+      <% Space.amenities_list.each_with_index do |amenity, index| %>
+        <li>
+          <input type="checkbox" name="space[amenities][]" value="<%= index %>">
+            <%= amenity %>
+          </input>
+        </li>
+      <% end %>
+    </ul><br>
+
+  <p><input type="submit" value="Sign up"></p>
+</form>
