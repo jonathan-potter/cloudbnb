@@ -51,3 +51,18 @@ header {
 #user-banner > ul > li {
   margin: 0 5px;
 }
+
+#space-amenities {
+  width: 500px;
+  display: block;
+}
+
+.checkbox-li {
+  min-width: 250px;
+  float: inline;
+}
+
+#space-booking-rates {
+  width: 250px;
+  display: block;
+}

@@ -1,4 +1,4 @@
-<form action="<%= spaces_url %>" method="post">
+<form class="group" action="<%= spaces_url %>" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
   <label for="space-title">Space Title</label><br>
@@ -26,7 +26,7 @@
      value="<%= @space.house_rules %>"></textarea><br>
 
  <label for="space-booking_rates">Rate Plans</label><br>
-   <ul id="space-booking_rates">
+   <ul class="group" id="space-booking-rates">
      <% Space.booking_rates.each_with_index do |booking_rate, index| %>
        <li>
          <input type="checkbox" name="space_booking_rates_indicies[]" value="<%= index %>">
@@ -81,9 +81,9 @@
     </select><br>
 
   <label for="space-amenities">Amenities</label><br>
-    <ul id="space-amenities">
+    <ul class="group" id="space-amenities">
       <% Space.amenities_list.each_with_index do |amenity, index| %>
-        <li>
+        <li class="checkbox-li">
           <input type="checkbox" name="space_amenities_indicies[]" value="<%= index %>">
             <%= amenity %>
           </input>
@@ -91,5 +91,5 @@
       <% end %>
     </ul><br>
 
-  <p><input type="submit" value="Create space"></p>
+  <input type="submit" value="Create space">
 </form>
