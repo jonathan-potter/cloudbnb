@@ -5,17 +5,17 @@
     <input type="text" name="space[title]" id="space-title"
      value="<%= @space.title %>"><br>
 
-  <label for="space-address">Address</label><br>
-    <input type="text" name="space[address]" id="space-address"
-     value="<%= @space.address %>"><br>
-
-  <label for="space-country">Country</label><br>
-    <input type="text" name="space[country]" id="space-country"
-     value="<%= @space.country %>"><br>
+  <label for="space-street-address">Street Address</label><br>
+    <input type="text" name="space[address]" id="space-street-address"
+     value="<%= @space.street_address %>"><br>
 
   <label for="space-city">City</label><br>
     <input type="text" name="space[city]" id="space-city"
      value="<%= @space.city %>"><br>
+
+  <label for="space-country">Country</label><br>
+    <input type="text" name="space[country]" id="space-country"
+     value="<%= @space.country %>"><br>
 
   <label for="space-description">Description</label><br>
     <textarea type="text" name="space[description]" id="space-description"
@@ -25,18 +25,18 @@
     <textarea type="text" name="space[house_rules]" id="space-house_rules"
      value="<%= @space.house_rules %>"></textarea><br>
 
-     <label for="space-booking_rates">Rate Plans</label><br>
-       <ul id="space-booking_rates">
-         <% Space.booking_rates.each_with_index do |booking_rate, index| %>
-           <li>
-             <input type="checkbox" name="space_booking_rates_indicies[]" value="<%= index %>">
-               <%= booking_rate %>
-             </input>
-             <input type="number" value="space[booking_rate_<%= booking_rate.downcase %>_]">
-             </input>
-           </li>
-         <% end %>
-       </ul><br>
+ <label for="space-booking_rates">Rate Plans</label><br>
+   <ul id="space-booking_rates">
+     <% Space.booking_rates.each_with_index do |booking_rate, index| %>
+       <li>
+         <input type="checkbox" name="space_booking_rates_indicies[]" value="<%= index %>">
+           <%= booking_rate %>
+         </input>
+         <input type="number" value="space[booking_rate_<%= booking_rate.downcase %>]">
+         </input>
+       </li>
+     <% end %>
+   </ul><br>
 
   <label for="space-residence-type">Home Type</label><br>
     <select type="text" name="space[residence_type]" id="space-residence-type">

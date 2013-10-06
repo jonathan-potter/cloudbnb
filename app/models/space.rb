@@ -2,8 +2,8 @@ class Space < ActiveRecord::Base
   attr_accessible :owner_id, :title, :booking_rates, :booking_rate_daily,
   :booking_rate_weekly, :booking_rate_monthly, :residence_type, :bedroom_count,
   :bathroom_count, :room_type, :bed_type, :accommodates, :amenities, :description,
-  :house_rules, :address, :city, :country, :latitude, :longitude,
-  :amenities_indicies, :booking_rate_indicies
+  :house_rules, :address, :city, :country, :latitude,
+  :longitude, :amenities_indicies, :booking_rate_indicies
 
   geocoded_by :address
 
@@ -81,6 +81,16 @@ class Space < ActiveRecord::Base
 
   def set_booking_rates_from_options_list!(options_list)
     self.booking_rates = Space.integer_from_options_list(options_list)
+  end
+
+  def set_address_given_components(street_address, city, country)
+    self.address = [street_address, city, country].join(", ")
+  end
+
+  def street_address
+    return nil unless @street_address || self.address
+
+    @street_address ||= self.address.split(',').map(&:strip)
   end
 
 end

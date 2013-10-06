@@ -1,3 +1,5 @@
 <h1>Space Show Page</h1>
 
 <h2><%= @space.title %></h2>
+
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@space.latitude}%2C#{@space.longitude}" %>

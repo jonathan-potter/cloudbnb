@@ -10,6 +10,10 @@ class SpacesController < ApplicationController
     @space.set_amenities_from_options_list!(params[:space_amenities_indicies])
     @space.set_booking_rates_from_options_list!(params[:space_booking_rates_indicies])
 
+    @space.set_address_given_components(@space.address,
+                                        @space.city,
+                                        @space.country)
+
     if @space.save!
       redirect_to @space
     else
