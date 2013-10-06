@@ -8,11 +8,13 @@
 </head>
 <body>
 
-  <%= render "shared/flash_errors" %>
-  <%= render "shared/flash_notices" %>
-  <%= render "shared/login_logout_banner" %>
+  <header class="group">
+    <%= render "shared/flash_errors" %>
+    <%= render "shared/flash_notices" %>
+    <%= render "shared/login_logout_banner" %>
+  </header>
 
-<%= yield %>
+  <%= yield %>
 
 </body>
 </html>

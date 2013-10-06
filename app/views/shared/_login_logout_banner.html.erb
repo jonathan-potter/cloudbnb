@@ -1,11 +1,13 @@
-<% if logged_in? %>
-  <ul>
-    <li>Logged in as: <%= current_user.first_name %></li>
-    <li><%= button_to "Logout", session_url, :method => :delete %></li>
-  </ul>
-<% else %>
-  <ul>
-    <li><%= link_to "Sign up", new_user_url, method: :get %></li>
-    <li><%= link_to "Sign in", new_session_url, method: :get %></li>
-  </ul>
-<% end %>
+<nav class="group" id="user-banner">
+  <% if logged_in? %>
+    <ul>
+      <li>Logged in as: <%= current_user.first_name %></li>
+      <li><%= button_to "Logout", session_url, :method => :delete %></li>
+    </ul>
+  <% else %>
+    <ul>
+      <li><%= link_to "Sign up", new_user_url, method: :get %></li>
+      <li><%= link_to "Sign in", new_session_url, method: :get %></li>
+    </ul>
+  <% end %>
+</nav>
