@@ -1,0 +1,19 @@
+<li class="group space-index-list-item">
+  <!-- replace these images with space and user images -->
+  <%= link_to image_tag("http://placekitten.com/117/77", class: "space-image"), method: :get %>
+  <%= link_to image_tag("http://placekitten.com/35/35", class: "host-image"), method: :get %>
+
+  <header>
+    <h3>
+      <%= link_to space.title, space, method: :get%>
+    </h3>
+    <h4>
+      <%= Space.room_types[space.room_type] %> -
+      <%= space.city %>
+    </h4>
+  </header>
+
+  <div class="price-data">
+    $<%= space.booking_rate_daily %>
+  </div>
+</li>

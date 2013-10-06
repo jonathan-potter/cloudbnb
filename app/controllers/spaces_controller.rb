@@ -1,5 +1,13 @@
 class SpacesController < ApplicationController
 
+  def index
+    @spaces = Space.all
+  end
+
+  def show
+    @space = Space.find(params[:id])
+  end
+
   def new
     @space = Space.new
   end
@@ -20,10 +28,6 @@ class SpacesController < ApplicationController
       flash.now[:errors] << @space.errors
       render :new
     end
-  end
-
-  def show
-    @space = Space.find(params[:id])
   end
 
 end

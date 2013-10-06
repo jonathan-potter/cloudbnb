@@ -1,3 +1,38 @@
 // Place all the styles related to the spaces controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#spaces-index-list {
+  float: right;
+}
+
+.space-index-list-item {
+  width: 740px;
+  padding: 10px;
+  border-bottom: 1px solid #CCC;
+}
+
+img {
+  padding: 5px;
+}
+
+.space-image {
+  float: left;
+  width: 118px;
+  height: 77px;
+}
+
+.host-image {
+  float: left;
+  width: 35px;
+  height: 35px;
+}
+
+.space-index-list-item > header {
+  float: left;
+}
+
+.space-index-list-item > .price-data {
+  float: right;
+}
