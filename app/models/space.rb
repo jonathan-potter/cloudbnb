@@ -68,8 +68,10 @@ class Space < ActiveRecord::Base
   def self.integer_from_options_list(options_list)
     # convert options list given by radio buttons into one-hot integer
     amenities = 0;
-    options_list.each do |option|
-      amenities += 2 ** option.to_i
+    if options_list
+      options_list.each do |option|
+        amenities += 2 ** option.to_i
+      end
     end
 
     amenities

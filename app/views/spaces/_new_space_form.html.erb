@@ -32,7 +32,7 @@
          <input type="checkbox" name="space_booking_rates_indicies[]" value="<%= index %>">
            <%= booking_rate %>
          </input>
-         <input type="number" value="space[booking_rate_<%= booking_rate.downcase %>]">
+         <input type="number" name="space[booking_rate_<%= booking_rate.downcase %>]">
          </input>
        </li>
      <% end %>
