@@ -2,12 +2,7 @@
   <%= gmaps4rails @json %>
 </div>
 
-<ul class="group vertical-checkboxes">
-  <% Space.amenities_list.each_with_index do |amenity, index| %>
-    <li class="checkbox-li">
-      <input type="checkbox" name="space_amenities_indicies[]" value="<%= index %>">
-        <%= amenity %>
-      </input>
-    </li>
-  <% end %>
-</ul><br>
+
+<%= checkbox_group collection: Space.room_types,
+                   ul_class:   "checkbox-li",
+                   html_name:  "space_filter[room_types][]" %>

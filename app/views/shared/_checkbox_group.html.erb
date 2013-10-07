@@ -1,0 +1,9 @@
+<ul class="group <%= @ul[:ul_class] %>">
+  <% @ul[:collection].each_with_index do |element, index| %>
+    <li class="checkbox-li">
+      <input type="checkbox" name="<%= @ul[:html_name] %>[]" value="<%= index %>">
+        <%= element %>
+      </input>
+    </li>
+  <% end %>
+</ul><br>

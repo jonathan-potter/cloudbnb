@@ -12,7 +12,7 @@
  *= require_tree .
  */
 
-body,h1,h2,h3,h4,h5,h6,p,img,a,ul,li,header,nav,img,main {
+body,h1,h2,h3,h4,h5,h6,p,img,a,ul,li,header,nav,img,main,section {
     margin: 0;
     padding: 0;
     border: 0;

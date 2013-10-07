@@ -2,9 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+section {
+  display: inline;
+}
+
 #sidebar {
   float:left;
-  width:230;
+  width:250;
 }
 
 #spaces-index-list {
@@ -12,7 +16,7 @@
 }
 
 .space-index-list-item {
-  width: 740px;
+  width: 720px;
   padding: 10px;
   border-bottom: 1px solid #CCC;
 }
