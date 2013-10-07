@@ -3,7 +3,6 @@
 
   <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@space.latitude}%2C#{@space.longitude}" %>
 
-  <form action="<%= new_space_booking_url(@space.id) %>">
-  <button type=submit>New Booking</button>
-  </form>
+  <%= render "spaces/show/booking_sidebar" %>
+
 </main>
