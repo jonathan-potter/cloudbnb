@@ -86,7 +86,15 @@ class Space < ActiveRecord::Base
     #   filtered_spaces = filtered_spaces.where("room_type")
     # end
 
-    # if filters[:booking_]
+    if filters[:booking_rate_min].length > 0
+      booking_rate_min = filters[:booking_rate_min]
+      filtered_spaces = filtered_spaces.where("booking_rate_daily > ?", booking_rate_min)
+    end
+
+    if filters[:booking_rate_max].length > 0
+      booking_rate_max = filters[:booking_rate_max]
+      filtered_spaces = filtered_spaces.where("booking_rate_daily < ?", booking_rate_max)
+    end
 
     if filters[:amenities]
       amenities = Space.integer_from_options_list(filters[:amenities])
