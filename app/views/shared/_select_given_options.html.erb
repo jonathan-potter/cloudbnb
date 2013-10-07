@@ -1,0 +1,7 @@
+<label><%= @options[:label] %>
+  <select name="<%= @options[:html_name] %>">
+    <% @options[:collection].each_with_index do |element, index| %>
+      <option value="<%= index %>"><%= element %></option>
+    <% end %>
+  </select><br>
+</label>

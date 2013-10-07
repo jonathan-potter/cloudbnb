@@ -1,0 +1,7 @@
+<label><%= @options[:label] %>
+  <select name="<%= @options[:html_name] %>">
+    <% (1..16).each do |number| %>
+      <option value="<%= number %>"><%= number %></option>
+    <% end %>
+  </select><br>
+</label>
