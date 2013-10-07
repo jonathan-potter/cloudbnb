@@ -1,0 +1,61 @@
+<main>
+  <header class="group">
+    <h1>The Listing</h1>
+    <%= link_to image_tag("http://placekitten.com/117/77", class: "space-image"), @space, method: :get %>
+    <h2><%= @space.title %></h2>
+    <div>
+      <div>
+        <%= @space.address %>
+      </div>
+      <ul>
+        <li><%= Space.residence_types[@space.residence_type] %></li>
+        <li><%= Space.room_types[@space.room_type] %></li>
+        <li><%= Space.bed_types[@space.bed_type] %></li>
+      </ul>
+    </div>
+  </header>
+
+  <section>
+    <h3>Your Trip</h3>
+    <table>
+      <tr>
+        <td>Check in</td>
+        <td><%= @booking.start_date %></td>
+      </tr>
+      <tr>
+        <td>Check out</td>
+        <td><%= @booking.end_date %></td>
+      </tr>
+      <tr>
+        <td>Nights</td>
+        <td>DO MATH HERE</td>
+      </tr>
+      <tr>
+        <td>Guests</td>
+        <td><%= @booking.guest_count %></td>
+      </tr>
+    </table>
+  </section>
+
+  <section>
+    <table>
+      <tr>
+        <td>Booking Rate</td>
+        <td><%= @booking.booking_rate_daily %></td>
+      </tr>
+      <tr>
+        <td>Subtotal</td>
+        <td><%= @booking.end_date %></td>
+      </tr>
+      <tr>
+        <td>Service Fee</td>
+        <td>DO MATH HERE</td>
+      </tr>
+      <tr>
+        <td>Total</td>
+        <td><%= @booking.guest_count %></td>
+      </tr>
+    </table>
+  </section>
+
+</main>

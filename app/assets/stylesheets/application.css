@@ -31,9 +31,12 @@ body,h1,h2,h3,h4,h5,h6,p,img,a,ul,li,header,nav,img,main,section {
 }
 
 main {
+  background: #DDD;
   width: 1000px;
   margin: 20px auto;
   min-width: 1000px;
+  border-radius: 30px;
+  padding: 20px;
 }
 
 #site-header {

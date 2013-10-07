@@ -14,6 +14,8 @@ class Space < ActiveRecord::Base
 
   after_validation :geocode, if: :address_changed?
 
+  has_many :bookings
+
   def self.booking_rates
     ["Daily",
      "Weekly",
