@@ -2,7 +2,25 @@
   <%= gmaps4rails @json %>
 </div>
 
+<form id="sidebar-filters">
+  <h4>Room Type</h4>
+  <%= checkbox_group collection: Space.room_types,
+                     ul_class:   "checkbox-li",
+                     html_name:  "space_filters[room_types][]" %>
 
-<%= checkbox_group collection: Space.room_types,
-                   ul_class:   "checkbox-li",
-                   html_name:  "space_filter[room_types][]" %>
+  <h4>Room Type</h4>
+  <label>Min:
+    <input type="number" name="space_filters[booking_rate_min]"></input>
+  </label><br>
+
+  <label>Max:
+    <input type="number" name="space_filters[booking_rate_max]"></input>
+  </label>
+
+  <h4>Amenities</h4>
+  <%= checkbox_group collection: Space.amenities_list,
+                     ul_class:   "checkbox-li",
+                     html_name:  "space_filters[amenities]" %>
+
+  <button action="<%= spaces_url %>">Filter</button>
+</form>

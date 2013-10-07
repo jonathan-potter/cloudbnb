@@ -1,7 +1,12 @@
 class SpacesController < ApplicationController
 
   def index
-    @spaces = Space.all
+    if params[:space_filters]
+      @spaces = Space.find_with_filters(params[:space_filters])
+    else
+      @spaces = Space.all
+    end
+
     @json = @spaces.to_gmaps4rails
   end
 

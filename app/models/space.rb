@@ -78,6 +78,22 @@ class Space < ActiveRecord::Base
     amenities
   end
 
+  def self.find_with_filters(filters)
+
+    filtered_spaces = Space
+
+    # if filters[:room_type]
+    #   filtered_spaces = filtered_spaces.where("room_type")
+    # end
+
+    if filters[:amenities]
+      amenities = Space.integer_from_options_list(filters[:amenities])
+      filtered_spaces = filtered_spaces.where("amenities & ? > 0", amenities)
+    end
+
+    filtered_spaces
+  end
+
   def set_amenities_from_options_list!(options_list)
     self.amenities = Space.integer_from_options_list(options_list)
   end
