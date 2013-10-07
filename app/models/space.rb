@@ -82,9 +82,10 @@ class Space < ActiveRecord::Base
 
     filtered_spaces = Space
 
-    # if filters[:room_type]
-    #   filtered_spaces = filtered_spaces.where("room_type")
-    # end
+    if filters[:room_types].length > 0
+      room_types = Space.integer_from_options_list(filters[:room_types])
+      filtered_spaces = filtered_spaces.where("CAST(POW(2, room_type) AS INT) & ? > 0", room_types)
+    end
 
     if filters[:booking_rate_min].length > 0
       booking_rate_min = filters[:booking_rate_min]
