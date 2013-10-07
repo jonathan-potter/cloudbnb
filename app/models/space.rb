@@ -83,7 +83,7 @@ class Space < ActiveRecord::Base
     filtered_spaces = Space
 
     if filters[:city] && filters[:city].length
-      filtered_spaces = filtered_spaces.where("city = ?", filters[:city])
+      filtered_spaces = filtered_spaces.near(filters[:city],10)
     end
 
     if filters[:room_types] && filters[:room_types].length > 0
