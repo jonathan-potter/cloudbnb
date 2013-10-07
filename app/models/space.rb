@@ -82,17 +82,21 @@ class Space < ActiveRecord::Base
 
     filtered_spaces = Space
 
-    if filters[:room_types].length > 0
+    if filters[:city] && filters[:city].length
+      filtered_spaces = filtered_spaces.where("city = ?", filters[:city])
+    end
+
+    if filters[:room_types] && filters[:room_types].length > 0
       room_types = Space.integer_from_options_list(filters[:room_types])
       filtered_spaces = filtered_spaces.where("CAST(POW(2, room_type) AS INT) & ? > 0", room_types)
     end
 
-    if filters[:booking_rate_min].length > 0
+    if filters[:booking_rate_min] && filters[:booking_rate_min].length > 0
       booking_rate_min = filters[:booking_rate_min]
       filtered_spaces = filtered_spaces.where("booking_rate_daily > ?", booking_rate_min)
     end
 
-    if filters[:booking_rate_max].length > 0
+    if filters[:booking_rate_max] && filters[:booking_rate_max].length > 0
       booking_rate_max = filters[:booking_rate_max]
       filtered_spaces = filtered_spaces.where("booking_rate_daily < ?", booking_rate_max)
     end
