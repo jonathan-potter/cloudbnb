@@ -15,6 +15,12 @@
     </div>
   </header>
 
+  <% # All of this will need to be moved out of here at some point %>
+  <% night_count = distance_of_time_in_words(@booking.start_date, @booking.end_date).split(" ")[0].to_i %>
+  <% subtotal = @space.booking_rate_daily * night_count %>
+  <% service_fee = subtotal * 0.10 %>
+  <% total = subtotal + service_fee %>
+
   <section>
     <h3>Your Trip</h3>
     <table>
@@ -28,7 +34,7 @@
       </tr>
       <tr>
         <td>Nights</td>
-        <td>DO MATH HERE</td>
+        <td><%= night_count %></td>
       </tr>
       <tr>
         <td>Guests</td>
@@ -41,21 +47,34 @@
     <table>
       <tr>
         <td>Booking Rate</td>
-        <td><%= @booking.booking_rate_daily %></td>
+        <td>$<%= @space.booking_rate_daily %></td>
       </tr>
       <tr>
         <td>Subtotal</td>
-        <td><%= @booking.end_date %></td>
+        <td>$<%= subtotal %></td>
       </tr>
       <tr>
         <td>Service Fee</td>
-        <td>DO MATH HERE</td>
+        <td>$<%= service_fee %></td>
       </tr>
       <tr>
         <td>Total</td>
-        <td><%= @booking.guest_count %></td>
+        <td>$<%= total %></td>
       </tr>
     </table>
   </section>
+
+  <section>
+    <p>
+      If this website were real, this is where I would ask you to put in your payment information.
+    </p>
+  </section>
+
+  <form action="<%= booking_url(@booking.id) %>" method="POST">
+    <input type="hidden" name="_method" value="put">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+    <p><input type="submit" value="Book for Free"></p>
+  </form>
 
 </main>
