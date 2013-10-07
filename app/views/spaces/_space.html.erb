@@ -1,7 +1,7 @@
 <li class="group space-index-list-item">
   <!-- replace these images with space and user images -->
-  <%= link_to image_tag("http://placekitten.com/117/77", class: "space-image"), method: :get %>
-  <%= link_to image_tag("http://placekitten.com/35/35", class: "host-image"), method: :get %>
+  <%= link_to image_tag("http://placekitten.com/117/77", class: "space-image"), space, method: :get %>
+  <%= link_to image_tag("http://placekitten.com/35/35", class: "host-image"), user_url(space.owner_id), method: :get %>
 
   <header>
     <h3>

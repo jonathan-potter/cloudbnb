@@ -1,5 +1,13 @@
-<section>
-  <div>
+<div>
+  <%= gmaps4rails @json %>
+</div>
 
-  </div>
-</section>
+<ul class="group vertical-checkboxes">
+  <% Space.amenities_list.each_with_index do |amenity, index| %>
+    <li class="checkbox-li">
+      <input type="checkbox" name="space_amenities_indicies[]" value="<%= index %>">
+        <%= amenity %>
+      </input>
+    </li>
+  <% end %>
+</ul><br>

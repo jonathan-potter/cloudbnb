@@ -48,6 +48,7 @@ GEM
     erubis (2.7.0)
     execjs (2.0.2)
     geocoder (1.1.8)
+    gmaps4rails (1.5.6)
     hike (1.2.3)
     i18n (0.6.1)
     journey (1.0.4)
@@ -116,6 +117,7 @@ DEPENDENCIES
   binding_of_caller
   coffee-rails (~> 3.2.1)
   geocoder
+  gmaps4rails
   jquery-rails
   pg
   rails (= 3.2.13)

@@ -6,6 +6,7 @@ class Space < ActiveRecord::Base
   :longitude, :amenities_indicies, :booking_rate_indicies
 
   geocoded_by :address
+  acts_as_gmappable process_geocoding: false
 
   validates_presence_of :owner_id, :title, :booking_rates, :residence_type,
   :bedroom_count, :bathroom_count, :room_type, :bed_type, :accommodates,
@@ -93,6 +94,10 @@ class Space < ActiveRecord::Base
     return nil unless @street_address || self.address
 
     @street_address ||= self.address.split(',').map(&:strip)
+  end
+
+  def gmaps4rails_address
+    "#{self.address}, #{self.city}, #{self.country}"
   end
 
 end

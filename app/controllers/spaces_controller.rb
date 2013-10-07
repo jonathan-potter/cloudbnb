@@ -2,6 +2,7 @@ class SpacesController < ApplicationController
 
   def index
     @spaces = Space.all
+    @json = @spaces.to_gmaps4rails
   end
 
   def show
