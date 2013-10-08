@@ -1,0 +1,14 @@
+<div>
+  <table>
+    <col>
+      <img src="http://placekitten.com/300/300" class="user-image">
+    </col>
+    <% visitor = booking.user %>
+    <tr>
+      <%= "#{visitor.first_name} #{visitor.last_name}" %>
+    </tr>
+    <tr>
+      <%= "#{booking.start_date} - #{booking.end_date}" %>
+    </tr>
+  </table>
+</div>

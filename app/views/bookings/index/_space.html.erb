@@ -1,1 +1,15 @@
-<p>bookings index space</p>
+<header class="group space-bookings-index">
+
+  <div id="space-img"><%= link_to image_tag("http://placekitten.com/300/300"), @space, method: :get %></div>
+
+  <div id="calendar"><%= image_tag("http://placekitten.com/g/300/300") %></div>
+
+</header>
+
+<section>
+
+  <h2>Approved Bookings</h2>
+
+  <%= render partial:"bookings/index/booking", collection: @space.bookings %>
+
+</section>

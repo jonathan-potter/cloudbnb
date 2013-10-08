@@ -12,6 +12,10 @@ class User < ActiveRecord::Base
 
   has_many :bookings
   has_many :trips, through: :bookings, source: :space
+  has_many :spaces,
+  class_name: "Space",
+  foreign_key: :owner_id,
+  primary_key: :id
 
   def self.generate_session_token
     SecureRandom.urlsafe_base64(16)

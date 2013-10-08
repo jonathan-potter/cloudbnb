@@ -5,12 +5,8 @@ class BookingsController < ApplicationController
       @space = Space.find_by_id(params[:space_id])
       @bookings = @space.bookings
       @visitors = @space.visitors
-
-      render html: "bookings/index/space"
     elsif params[:user_id]
       @user = User.find_by_id(params[:user_id])
-
-      render html: "bookings/index/user"
     end
   end
 

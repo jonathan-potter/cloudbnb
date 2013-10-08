@@ -14,8 +14,14 @@ class Space < ActiveRecord::Base
 
   after_validation :geocode, if: :address_changed?
 
+
   has_many :bookings
   has_many :visitors, through: :bookings, source: :user
+  belongs_to :owner,
+  class_name: "User",
+  foreign_key: :owner_id,
+  primary_key: :id
+
 
   def self.booking_rates
     ["Daily",

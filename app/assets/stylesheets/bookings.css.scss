@@ -1,3 +1,19 @@
 // Place all the styles related to the bookings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+header.space-bookings-index {
+  display: block;
+  margin: auto;
+  width: 900px;
+}
+
+header.space-bookings-index > div {
+  display: inline-block;
+  margin: 0 50px;
+}
+
+.user-image {
+  width: 60px;
+  height: 60px;
+}
