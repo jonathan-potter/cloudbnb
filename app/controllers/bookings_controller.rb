@@ -24,17 +24,6 @@ class BookingsController < ApplicationController
     @space = Space.find_by_id(params[:space_id])
   end
 
-  def update
-    @booking = Booking.find(params[:id])
-    @booking.approval_status = Booking.approval_statuses[:pending]
-
-    if @booking.save
-      redirect_to @booking
-    else
-      render status: 422
-    end
-  end
-
   def create
     @booking = Booking.new(params[:booking])
     @space = Space.find_by_id(@booking.space_id)

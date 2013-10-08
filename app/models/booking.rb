@@ -36,6 +36,19 @@ class Booking < ActiveRecord::Base
     self.update_attributes!(approval_status: status)
   end
 
+  def overlapping_requests(status)
+    CatRentalRequest
+    .where("space_id = ?"   , self.space_id)
+    .where("? <= end_date"  , self.start_date)
+    .where("? >= start_date", self.end_date)
+    .where("id != ?"        , self.id)
+    .where("status = ?"     , Booking.approval_statuses(status))
+  end
+
+  def decline_conflicting_pending_requests!
+    overlapping_pending_requests.each { |request| request.decline }
+  end
+
   def cancel_by_user
     self.set_approval_status(Booking.approval_statuses[:canceled_by_user])
   end
@@ -49,11 +62,14 @@ class Booking < ActiveRecord::Base
   end
 
   def book
-    self.set_approval_status(Booking.approval_statuses[:pending])
+    unless overlapping_requests(:approved)
+      self.set_approval_status(Booking.approval_statuses[:pending])
+    end
   end
 
   def approve
     self.set_approval_status(Booking.approval_statuses[:approved])
+    self.decline_conflicting_pending_requests!
   end
 
 end

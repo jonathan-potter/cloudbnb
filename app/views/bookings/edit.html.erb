@@ -6,7 +6,7 @@
   </p>
 </section>
 
-<form action="<%= booking_url(@booking.id) %>" method="POST">
+<form action="<%= book_booking_url(@booking.id) %>" method="POST">
   <input type="hidden" name="_method" value="put">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 

@@ -1,3 +1,14 @@
-<h1>Splash Page!</h1>
+<form action="<%= spaces_url %>" id="root-page-search-bar">
 
-<%= link_to "Create New Space", new_space_url, method: :get %>
+  <input type="text" name="space_filters[city]" value="">
+
+  <input type="date" name="space_filters[start_date]">
+
+  <input type="date" name="space_filters[end_date]">
+
+  <%= select_numerical_given_options(label: "",
+                                 html_name: "space_filters[guest_count]") %>
+
+  <input type="submit" value="Search">
+
+</form>

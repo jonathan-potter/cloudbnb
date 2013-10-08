@@ -11,11 +11,10 @@
       <input type="date" name="booking[end_date]">
     </label>
 
-    <%= select_given_options(label: "Guests",
-                             html_name: "booking[guest_count]") %>
+    <%= select_numerical_given_options(label: "Guests",
+                                   html_name: "booking[guest_count]") %>
 
     <input type="hidden" name="booking[space_id]" value="<%= @space.id %>">
-    <input type="hidden" name="booking[booking_rate_daily]" value="<%= @space.booking_rate_daily %>">
 
     <button type="submit">Book it</button>
 

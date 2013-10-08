@@ -1,0 +1,9 @@
+<%= # Full featured
+calendar(:year => 2013, :month => 10) do |d|
+  fail
+  if listOfSpecialDays.include?(d)
+    [d.mday, {:class => "specialDay"}]
+  else
+    [d.mday, {:class => "normalDay"}]
+  end
+end %>

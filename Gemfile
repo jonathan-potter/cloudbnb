@@ -15,9 +15,11 @@ group :development do
   gem 'debugger'
   gem 'quiet_assets'
   gem 'thin'
+  gem 'faker'
 end
 
 gem 'jquery-rails'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'geocoder'
 gem 'gmaps4rails'
+gem 'calendar_helper'
