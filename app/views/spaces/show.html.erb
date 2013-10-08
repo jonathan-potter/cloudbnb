@@ -1,8 +1,5 @@
-<main>
-  <h2><%= @space.title %></h2>
+<h2><%= @space.title %></h2>
 
-  <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@space.latitude}%2C#{@space.longitude}" %>
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@space.latitude}%2C#{@space.longitude}" %>
 
-  <%= render "spaces/show/booking_sidebar" %>
-
-</main>
+<%= render "spaces/show/booking_sidebar" %>

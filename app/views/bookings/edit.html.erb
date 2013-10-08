@@ -1,18 +1,14 @@
-<main>
+<%= render "bookings/shared/itinerary" %>
 
-  <%= render "bookings/shared/itinerary" %>
+<section>
+  <p>
+    If this website were real, this is where I would ask you to put in your payment information.
+  </p>
+</section>
 
-  <section>
-    <p>
-      If this website were real, this is where I would ask you to put in your payment information.
-    </p>
-  </section>
+<form action="<%= booking_url(@booking.id) %>" method="POST">
+  <input type="hidden" name="_method" value="put">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
-  <form action="<%= booking_url(@booking.id) %>" method="POST">
-    <input type="hidden" name="_method" value="put">
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-
-    <p><input type="submit" value="Book for Free"></p>
-  </form>
-
-</main>
+  <p><input type="submit" value="Book for Free"></p>
+</form>
