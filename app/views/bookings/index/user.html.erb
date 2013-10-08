@@ -1,1 +1,13 @@
-<p>bookings index user</p>
+<section>
+
+  <h2>Trips</h2>
+
+  <table>
+
+    <th>Status</th><th>Location</th><th>Host</th><th>Dates</th><th>Options</th>
+    <%= render partial:"bookings/index/booking_space",
+               collection: @user.bookings %>
+
+  </table>
+
+</section>

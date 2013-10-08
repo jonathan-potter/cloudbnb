@@ -2,9 +2,7 @@ AirbnbClone::Application.routes.draw do
 
   root :to => 'root#root'
 
-  resources :users,    only: [:new, :create, :show] do
-    resources :bookings, only: [:index]
-  end
+  resources :users,    only: [:new, :create, :show]
 
   resource  :session,  only: [:new, :create, :destroy]
 
@@ -12,7 +10,7 @@ AirbnbClone::Application.routes.draw do
     resources :bookings, only: [:edit, :index]
   end
 
-  resources :bookings, only: [:create, :update, :show] do
+  resources :bookings, only: [:index, :create, :update, :show] do
     member do
       put "cancel_by_user"
       put "cancel_by_owner"

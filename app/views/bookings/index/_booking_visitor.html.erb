@@ -2,7 +2,8 @@
 
   <img src="http://placekitten.com/300/300" class="user-image">
   <table>
-    <% visitor = booking.user %>
+    <% visitor = booking_visitor.user %>
+    <% booking = booking_visitor %>
     <tr>
       <%= "#{visitor.first_name} #{visitor.last_name}" %>
     </tr>

@@ -7,8 +7,8 @@ class BookingsController < ApplicationController
       @visitors = @space.visitors
 
       render "bookings/index/space"
-    elsif params[:user_id]
-      @user = User.find_by_id(params[:user_id])
+    else
+      @user = User.find_by_id(current_user.id)
 
       render "bookings/index/user"
     end

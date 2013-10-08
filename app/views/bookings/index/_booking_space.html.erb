@@ -1,0 +1,21 @@
+<% statuses = Booking.approval_statuses %>
+
+<tr>
+  <td>
+    <%= statuses[booking_space.approval_status] %>
+  </td>
+  <td>
+    <%= link_to "#{booking_space.space.title}, #{booking_space.space.city}",
+                booking_space.space, method: :get %>
+  </td>
+  <td>
+    <%= link_to "#{booking_space.space.owner.first_name} #{booking_space.space.owner.last_name}",
+                booking_space.space.owner, method: :get %>
+  </td>
+  <td>
+    <%= "#{booking_space.start_date} - #{booking_space.end_date}" %>
+  </td>
+  <td>
+    <%= button_to "Cancel", cancel_by_user_booking_url(booking_space.id), method: :put %>
+  </td>
+</tr>
