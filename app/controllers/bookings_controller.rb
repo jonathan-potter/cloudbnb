@@ -3,10 +3,14 @@ class BookingsController < ApplicationController
   def index
     if params[:space_id]
       @space = Space.find_by_id(params[:space_id])
-      render "bookings/index/space"
+      @bookings = @space.bookings
+      @visitors = @space.visitors
+
+      render html: "bookings/index/space"
     elsif params[:user_id]
       @user = User.find_by_id(params[:user_id])
-      render "bookings/index/user"
+
+      render html: "bookings/index/user"
     end
   end
 

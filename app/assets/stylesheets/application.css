@@ -12,7 +12,8 @@
  *= require_tree .
  */
 
-@import url(http://fonts.googleapis.com/css?family=Iceberg);
+@import url(http://fonts.googleapis.com/css?family=Anaheim);
+/*@import url(http://fonts.googleapis.com/css?family=Iceberg);*/
 
 body,h1,h2,h3,h4,h5,h6,p,img,a,ul,li,header,nav,img,main,section {
     margin: 0;
@@ -45,6 +46,13 @@ main {
   padding: 20px;
 }
 
+#site-header {
+  background: white;
+  height: 45px;
+  width: 100%;
+  min-width: 600px;
+}
+
 #logo-banner {
   display: inline-block;
   float: left;
@@ -57,14 +65,8 @@ main {
   display: inline;
   margin: 0 auto;
   padding: 10px;
-  font-family: 'Iceberg', cursive;
+  font-family: 'Anaheim', sans-serif;
   font-size: 25px;
-}
-
-#site-header {
-  background: white;
-  height: 45px;
-  width: 100%;
 }
 
 #user-banner {

@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   after_initialize :ensure_session_token
 
   has_many :bookings
+  has_many :trips, through: :bookings, source: :space
 
   def self.generate_session_token
     SecureRandom.urlsafe_base64(16)
