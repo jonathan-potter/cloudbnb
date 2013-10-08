@@ -24,8 +24,6 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.approval_status = Booking.approval_statuses[:pending]
 
-    fail
-
     if @booking.save
       redirect_to @booking
     else

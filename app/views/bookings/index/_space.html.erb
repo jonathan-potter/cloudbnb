@@ -10,6 +10,19 @@
 
   <h2>Approved Bookings</h2>
 
-  <%= render partial:"bookings/index/booking", collection: @space.bookings %>
+  <%= render partial:"bookings/index/booking",
+             collection: @space.bookings.where("approval_status = ?",
+                                               Booking.approval_statuses[:approved]) %>
+
+  <h2>Pending Bookings</h2>
+
+  <%= render partial:"bookings/index/booking",
+             collection: @space.bookings.where("approval_status = ?",
+                                               Booking.approval_statuses[:pending]) %>
+
+  <h2>All Bookings</h2>
+
+  <%= render partial:"bookings/index/booking",
+             collection: @space.bookings %>
 
 </section>

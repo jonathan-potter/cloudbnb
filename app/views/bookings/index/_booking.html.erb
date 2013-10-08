@@ -11,12 +11,17 @@
     </tr>
   </table>
 
-  <ul>
-
-    <li>
+  <% statuses =       Booking.approval_statuses %>
+  <% booking_status = booking.approval_status %>
+  <div class="button-group">
+    <% if booking_status == statuses[:approved] %>
       <%= button_to "Cancel", cancel_by_owner_booking_url(booking.id), method: :put %>
-    </li>
-
-  </ul>
-
+    <% elsif booking_status == statuses[:pending] %>
+      <%= button_to "Approve", approve_booking_url(booking.id), method: :put %>
+      <%= button_to "Decline", decline_booking_url(booking.id), method: :put %>
+    <% else %>
+      <h3>development placeholder</h3>
+      <p>Status: <%= statuses[booking_status] %></p>
+    <% end %>
+  </div>
 </div>
