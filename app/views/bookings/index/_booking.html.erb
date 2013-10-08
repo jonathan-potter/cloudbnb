@@ -1,8 +1,7 @@
 <div>
+
+  <img src="http://placekitten.com/300/300" class="user-image">
   <table>
-    <col>
-      <img src="http://placekitten.com/300/300" class="user-image">
-    </col>
     <% visitor = booking.user %>
     <tr>
       <%= "#{visitor.first_name} #{visitor.last_name}" %>
@@ -11,4 +10,13 @@
       <%= "#{booking.start_date} - #{booking.end_date}" %>
     </tr>
   </table>
+
+  <ul>
+
+    <li>
+      <%= button_to "Cancel", cancel_by_owner_booking_url(booking.id), method: :put %>
+    </li>
+
+  </ul>
+
 </div>

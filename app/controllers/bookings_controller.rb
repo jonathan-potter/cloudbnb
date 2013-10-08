@@ -24,6 +24,8 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.approval_status = Booking.approval_statuses[:pending]
 
+    fail
+
     if @booking.save
       redirect_to @booking
     else
@@ -51,6 +53,31 @@ class BookingsController < ApplicationController
     else
       render status: 422
     end
+  end
+
+  def cancel_by_user
+    Booking.find_booking_and_update_approval_status(params[:id], "cancel_by_user")
+    redirect_to(:back)
+  end
+
+  def cancel_by_owner
+    Booking.find_booking_and_update_approval_status(params[:id], "cancel_by_owner")
+    redirect_to(:back)
+  end
+
+  def decline
+    Booking.find_booking_and_update_approval_status(params[:id], "decline")
+    redirect_to(:back)
+  end
+
+  def book
+    Booking.find_booking_and_update_approval_status(params[:id], "book")
+    redirect_to(:back)
+  end
+
+  def approve
+    Booking.find_booking_and_update_approval_status(params[:id], "approve")
+    redirect_to(:back)
   end
 
 end
