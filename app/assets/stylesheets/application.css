@@ -12,6 +12,8 @@
  *= require_tree .
  */
 
+@import url(http://fonts.googleapis.com/css?family=Iceberg);
+
 body,h1,h2,h3,h4,h5,h6,p,img,a,ul,li,header,nav,img,main,section {
     margin: 0;
     padding: 0;
@@ -30,8 +32,12 @@ body,h1,h2,h3,h4,h5,h6,p,img,a,ul,li,header,nav,img,main,section {
   display: table;
 }
 
+body {
+  background: #EEE;
+}
+
 main {
-  background: #DDD;
+  background: white;
   width: 1000px;
   margin: 20px auto;
   min-width: 1000px;
@@ -39,8 +45,24 @@ main {
   padding: 20px;
 }
 
+#logo-banner {
+  display: inline-block;
+  float: left;
+  height: 45px;
+  vertical-align: middle;
+  line-height: 45px
+}
+
+#site-logo {
+  display: inline;
+  margin: 0 auto;
+  padding: 10px;
+  font-family: 'Iceberg', cursive;
+  font-size: 25px;
+}
+
 #site-header {
-  background: #DDD;
+  background: white;
   height: 45px;
   width: 100%;
 }
@@ -53,7 +75,7 @@ main {
   line-height: 45px
 }
 
-#user-banner > ul > li {
+nav > ul > li {
   float: left;
   margin: 0 5px;
 }

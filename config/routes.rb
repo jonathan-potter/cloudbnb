@@ -9,9 +9,9 @@ AirbnbClone::Application.routes.draw do
   resource  :session,  only: [:new, :create, :destroy]
 
   resources :spaces,   only: [:new, :create, :show, :index] do
-    resources :bookings, only: [:new, :index]
+    resources :bookings, only: [:edit, :index]
   end
 
-  resources :bookings, only: [:create, :show]
+  resources :bookings, only: [:create, :update, :show]
 
 end

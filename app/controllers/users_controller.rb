@@ -17,7 +17,7 @@ class UsersController < ApplicationController
     end
 
     if @user.save
-      login_user!
+      login_user!(@user)
       redirect_to root_url
     else
       flash.now[:errors] = @user.errors

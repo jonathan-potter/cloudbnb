@@ -11,19 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131007141421) do
+ActiveRecord::Schema.define(:version => 20131007194918) do
 
   create_table "bookings", :force => true do |t|
-    t.integer  "user_id",         :null => false
-    t.integer  "space_id",        :null => false
-    t.date     "start_date",      :null => false
-    t.date     "end_date",        :null => false
-    t.integer  "approval_status", :null => false
-    t.float    "price",           :null => false
-    t.float    "service_fee",     :null => false
-    t.integer  "guest_count",     :null => false
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.integer  "user_id",            :null => false
+    t.integer  "space_id",           :null => false
+    t.date     "start_date",         :null => false
+    t.date     "end_date",           :null => false
+    t.integer  "approval_status",    :null => false
+    t.float    "service_fee",        :null => false
+    t.integer  "guest_count",        :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.float    "total"
+    t.float    "booking_rate_daily"
   end
 
   add_index "bookings", ["space_id"], :name => "index_bookings_on_space_id"

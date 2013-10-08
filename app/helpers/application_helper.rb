@@ -6,4 +6,16 @@ module ApplicationHelper
     render "shared/checkbox_group"
   end
 
+  def select_given_options(options)
+    # options hash must include :label, :collection, :html_name
+    @options = options
+    render "shared/select_given_options"
+  end
+
+  def select_given_options(options)
+    # options hash must include :label, :html_name
+    @options = options
+    render "shared/select_numerical"
+  end
+
 end

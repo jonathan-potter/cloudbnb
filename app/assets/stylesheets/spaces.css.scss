@@ -6,8 +6,13 @@ section {
   display: inline;
 }
 
-#sidebar {
+.left-sidebar {
   float:left;
+  width:250;
+}
+
+.right-sidebar {
+  float:right;
   width:250;
 }
 
