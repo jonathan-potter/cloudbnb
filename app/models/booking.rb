@@ -27,9 +27,12 @@ class Booking < ActiveRecord::Base
                    2 => "approved"}
   end
 
-  def self.find_booking_and_update_approval_status(booking_id, method)
-    booking = Booking.find_by_id(booking_id)
-    booking.public_send(method)
+  def update_approval_status(method)
+    self.public_send(method)
+  end
+
+  def has_initial_form_attributes
+    self.start_date && self.end_date && self.guest_count
   end
 
   def conflicts_with_date?(date)
@@ -66,7 +69,7 @@ class Booking < ActiveRecord::Base
   end
 
   def book
-    unless overlapping_requests(:approved)
+    if overlapping_requests(:approved).empty?
       self.set_approval_status(Booking.approval_statuses[:pending])
     end
   end

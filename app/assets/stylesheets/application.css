@@ -46,6 +46,15 @@ main {
   padding: 20px;
 }
 
+#errors-notices {
+  background: white;
+  width: 1000px;
+  margin: 20px auto;
+  min-width: 1000px;
+  border-radius: 30px;
+  padding: 20px;
+}
+
 #site-header {
   background: white;
   height: 45px;
@@ -95,4 +104,8 @@ nav > ul > li {
 #space-booking-rates {
   width: 250px;
   display: block;
+}
+
+.sidebar {
+  display: inline-block;
 }
