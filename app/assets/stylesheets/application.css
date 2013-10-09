@@ -78,6 +78,14 @@ main {
   font-size: 25px;
 }
 
+#site-logo > ul > li > a:link {
+  color: black;
+}
+
+#site-logo > ul > li > a:visited {
+  color: black;
+}
+
 #user-banner {
   display: inline-block;
   float: right;
