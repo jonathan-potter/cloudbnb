@@ -44,6 +44,10 @@ class Booking < ActiveRecord::Base
     date.between(self.start_date, self.end_date)
   end
 
+  def conflicts_with_dates?(start_date, end_date)
+    self.start_date < end_date && self.end_date > start_date
+  end
+
   def set_approval_status(status)
     self.update_attributes!(approval_status: status)
   end

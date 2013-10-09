@@ -89,7 +89,7 @@ class Space < ActiveRecord::Base
 
   def self.find_with_filters(filters)
 
-    filtered_spaces = Space
+    filtered_spaces = Space.includes(:bookings)
 
     if filters[:city] && filters[:city].length > 0
       filtered_spaces = filtered_spaces.near(filters[:city],10)
@@ -126,11 +126,18 @@ class Space < ActiveRecord::Base
         end_date =   Date.parse(filters[:end_date])
         if start_date.is_a?(Date) && end_date.is_a?(Date)
 
+          # filtered_spaces = filtered_spaces.select do |space|
+          #   space.bookings
+          #   .where("? <= end_date AND ? >= start_date", start_date, end_date)
+          #   .where("approval_status = ?", Booking.approval_statuses[:approved])
+          #   .empty?
+          # end
+
           filtered_spaces = filtered_spaces.select do |space|
-            space.bookings
-            .where("? <= end_date AND ? >= start_date", start_date, end_date)
-            .where("approval_status = ?", Booking.approval_statuses[:approved])
-            .empty?
+            space.bookings.none? do |booking|
+              booking.approval_status == Booking.approval_statuses[:approved] &&
+              booking.conflicts_with_dates?(start_date, end_date)
+            end
           end
 
         end
