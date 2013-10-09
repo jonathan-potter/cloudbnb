@@ -51,7 +51,7 @@ class Booking < ActiveRecord::Base
     first = first_and_last[0]
     last  = first_and_last[1]
     bookings = Booking.where("space_id = ?"   , space.id)
-                      .where("? <= end_date"  , first)
+                      .where("? < end_date"  , first)
                       .where("? >= start_date", last)
                       .where("approval_status = ?"     , Booking.approval_statuses[:approved])
 
@@ -59,7 +59,7 @@ class Booking < ActiveRecord::Base
     days = (first..last).to_a
     bookings.each do |booking|
       days.each do |day|
-        booked_dates << day if day.between?(booking.start_date, booking.end_date)
+        booked_dates << day if day.between?(booking.start_date, booking.end_date - 1)
       end
     end
 
@@ -77,7 +77,7 @@ class Booking < ActiveRecord::Base
   def overlapping_requests(status)
     Booking
     .where("space_id = ?"        , self.space_id)
-    .where("? <= end_date"       , self.start_date)
+    .where("? < end_date"       , self.start_date)
     .where("? >= start_date"     , self.end_date)
     .where("id != ?"             , self.id)
     .where("approval_status = ?" , Booking.approval_statuses[status])

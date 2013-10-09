@@ -22,9 +22,4 @@
              collection: @space.bookings.where("approval_status = ?",
                                                Booking.approval_statuses[:pending]) %>
 
-  <h2>All Bookings</h2>
-
-  <%= render partial:"bookings/index/booking_visitor",
-             collection: @space.bookings %>
-
 </section>
