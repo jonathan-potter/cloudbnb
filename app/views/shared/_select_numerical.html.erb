@@ -13,8 +13,15 @@
     <% end %>
 
     <% (1..upper_limit).each do |number| %>
-      <% number = "#{max}+" if number == max %>
-      <option value="<%= number %>"><%= number %></option>
+
+    <% if number == max %>
+      <% string = "#{max}+" %>
+    <% else %>
+      <% string = number.to_s  %>
+    <% end %>
+
+
+      <option value="<%= number %>"><%= string %></option>
     <% end %>
   </select><br>
 </label>

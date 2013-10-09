@@ -8,7 +8,7 @@
                      ul_class:   "checkbox-li",
                      html_name:  "space_filters[room_types]" %>
 
-  <h4>Room Type</h4>
+  <h4>Price</h4>
   <label>Min:
     <input type="number" name="space_filters[booking_rate_min]"></input>
   </label><br>
@@ -16,6 +16,11 @@
   <label>Max:
     <input type="number" name="space_filters[booking_rate_max]"></input>
   </label>
+
+  <h4>Guest Count</h4>
+  <%= select_numerical_given_options(label: "",
+                                 html_name: "space_filters[guest_count]",
+                                    limits: [1,16]) %>
 
   <h4>Amenities</h4>
   <%= checkbox_group collection: Space.amenities_list,
