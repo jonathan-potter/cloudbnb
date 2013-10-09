@@ -22,6 +22,14 @@
                                  html_name: "space_filters[guest_count]",
                                     limits: [1,16]) %>
 
+  <label>Check in<br>
+    <input type="date" name="space_filters[start_date]">
+  </label>
+
+  <label>Check out<br>
+    <input type="date" name="space_filters[end_date]">
+  </label>
+
   <h4>Amenities</h4>
   <%= checkbox_group collection: Space.amenities_list,
                      ul_class:   "checkbox-li",

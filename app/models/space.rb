@@ -110,12 +110,6 @@ class Space < ActiveRecord::Base
       filtered_spaces = filtered_spaces.where("booking_rate_daily < ?", booking_rate_max)
     end
 
-    if filters[:start_date] && filters[:start_date].is_a?(Date)
-      if filters[:start_date] && filters[:start_date].is_a?(Date)
-        filtered_spaces = filtered_spaces.where("")
-      end
-    end
-
     if filters[:guest_count] && filters[:guest_count].to_i > 0
       guest_count = filters[:guest_count]
       filtered_spaces = filtered_spaces.where("accommodates >= ?", guest_count)
@@ -124,6 +118,23 @@ class Space < ActiveRecord::Base
     if filters[:amenities]
       amenities = Space.integer_from_options_list(filters[:amenities])
       filtered_spaces = filtered_spaces.where("amenities & ? = ?", amenities, amenities)
+    end
+
+    if filters[:start_date] && filters[:start_date].length > 0
+      start_date = Date.parse(filters[:start_date])
+      if filters[:end_date] && filters[:end_date].length > 0
+        end_date =   Date.parse(filters[:end_date])
+        if start_date.is_a?(Date) && end_date.is_a?(Date)
+
+          filtered_spaces = filtered_spaces.select do |space|
+            space.bookings
+            .where("? <= end_date AND ? >= start_date", start_date, end_date)
+            .where("approval_status = ?", Booking.approval_statuses[:approved])
+            .empty?
+          end
+
+        end
+      end
     end
 
     filtered_spaces == Space ? Space.all : filtered_spaces
