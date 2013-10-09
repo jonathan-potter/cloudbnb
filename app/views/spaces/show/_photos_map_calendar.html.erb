@@ -1,0 +1,5 @@
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=300x300&sensor=false&zoom=16&markers=#{@space.latitude}%2C#{@space.longitude}",
+              class: "space-map"%>
+
+<%= render partial: "shared/calendar",
+           locals: {bookings: @space.booked_dates_this_month} %>

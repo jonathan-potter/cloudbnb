@@ -19,4 +19,12 @@
     <button type="submit">Book it</button>
 
   </form>
+
+  <nav>
+
+    <div id="owner-img"><%= link_to image_tag("http://placekitten.com/150/150"), @space.owner, method: :get %></div>
+
+    <h3><%= "#{@space.owner.first_name}" %></h3>
+
+  </nav>
 </section>

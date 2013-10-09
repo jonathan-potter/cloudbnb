@@ -1,12 +1,16 @@
 class BookingsController < ApplicationController
 
+  before_filter :require_current_user!
+
   def index
     if params[:space_id]
       @space = Space.find_by_id(params[:space_id])
-      @bookings = @space.bookings
-      @visitors = @space.visitors
 
-      render "bookings/index/space"
+      if @space.owner.id == current_user.id
+        redirect_to "http://slashdot.com"
+      else
+        render "bookings/index/space"
+      end
     else
       @user = User.find_by_id(current_user.id)
 
@@ -45,6 +49,8 @@ class BookingsController < ApplicationController
       render status: 422
     end
   end
+
+############## Below actions only modify booking approval status ###############
 
   def cancel_by_user
     Booking.find_booking_and_update_approval_status(params[:id], "cancel_by_user")
