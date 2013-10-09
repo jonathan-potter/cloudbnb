@@ -13,7 +13,7 @@ module ApplicationHelper
   end
 
   def select_numerical_given_options(options)
-    # options hash must include :label, :html_name
+    # options hash must include :label, :html_name, :limits
     @options = options
     render "shared/select_numerical"
   end

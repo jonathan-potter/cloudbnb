@@ -1,6 +1,14 @@
+<% max = 16 %>
+<% min = 0 %>
+
 <label><%= @options[:label] %>
   <select name="<%= @options[:html_name] %>">
-    <% (1..16).each do |number| %>
+
+    <% lower_limit = [@options[:limits][0], min].max  %>
+    <% upper_limit = [@options[:limits][1], max].min %>
+
+    <% (1..upper_limit).each do |number| %>
+      <% number = "#{max}+" if number == max %>
       <option value="<%= number %>"><%= number %></option>
     <% end %>
   </select><br>
