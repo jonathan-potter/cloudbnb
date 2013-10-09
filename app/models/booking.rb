@@ -7,6 +7,7 @@ class Booking < ActiveRecord::Base
                         :approval_status, :total, :service_fee,
                         :booking_rate_daily, :guest_count
 
+
   belongs_to :user
   belongs_to :space
 
@@ -25,6 +26,10 @@ class Booking < ActiveRecord::Base
                    0 => "unbooked",
                    1 => "pending",
                    2 => "approved"}
+  end
+
+  def guest_count_valid?
+    self.guest_count < self.space.accommodates
   end
 
   def update_approval_status(method)
@@ -53,7 +58,7 @@ class Booking < ActiveRecord::Base
   end
 
   def is_free_of_conflicts?
-    !overlapping_requests(:approved)
+    overlapping_requests(:approved).empty?
   end
 
   def decline_conflicting_pending_requests!
