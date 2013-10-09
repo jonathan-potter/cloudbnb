@@ -2,7 +2,9 @@
 
   <div id="space-img"><%= link_to image_tag("http://placekitten.com/300/300"), @space, method: :get %></div>
 
-  <div id="calendar"><%= image_tag("http://placekitten.com/g/300/300") %></div>
+  <%= render partial: "shared/calendar",
+             locals: {bookings: Booking.booked_dates_this_month_for_space(@space)} %>
+
 
 </header>
 

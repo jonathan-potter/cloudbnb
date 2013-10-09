@@ -2,8 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-require 'calendar_styles/red'
-
 section {
   display: inline;
 }
@@ -53,5 +51,36 @@ img {
 }
 
 .special-day {
-  background: gray;
+  color: #CCC;
+  background: #AAA;
+  border: 1px solid black;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+}
+
+.normal-day {
+  background: #EEE;
+  border: 1px solid black;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+}
+
+.otherMonth {
+  color: #CCC;
+  background: #666;
+  border: 1px solid black;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+}
+
+.calendar {
+  display: inline-block;
+}
+
+.space-map {
+  width: 300px;
+  height: 300px;
 }
