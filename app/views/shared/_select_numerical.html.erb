@@ -4,8 +4,13 @@
 <label><%= @options[:label] %>
   <select name="<%= @options[:html_name] %>">
 
-    <% lower_limit = [@options[:limits][0], min].max  %>
-    <% upper_limit = [@options[:limits][1], max].min %>
+    <% if @options[:limits] %>
+      <% lower_limit = [@options[:limits][0], min].max  %>
+      <% upper_limit = [@options[:limits][1], max].min %>
+    <% else %>
+      <%= upper_limit = max %>
+      <%= lower_limit = min %>
+    <% end %>
 
     <% (1..upper_limit).each do |number| %>
       <% number = "#{max}+" if number == max %>
