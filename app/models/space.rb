@@ -174,5 +174,13 @@ class Space < ActiveRecord::Base
     [first_day, end_day]
   end
 
+  def boolean_array_from_amenities_integer
+    [].tap do |amenities_list|
+      Space.amenities_list.length.times do |order|
+        amenities_list << (self.amenities & 2 ** order > 0)
+      end
+    end
+  end
+
 
 end

@@ -1,0 +1,16 @@
+<p><%= @space.description %></p>
+
+<table class="tab-data">
+  <tr>
+    <td class="table-row-title">Room type:</td>
+    <td class="table-row-data"><%= Space.room_types[@space.room_type] %></td>
+  </tr>
+  <tr>
+    <td class="table-row-title">Bed type:</td>
+    <td class="table-row-data"><%= Space.bed_types[@space.bed_type] %></td>
+  </tr>
+  <tr>
+    <td class="table-row-title">Accomodates:</td>
+    <td class="table-row-data"><%= @space.accommodates %></td>
+  </tr>
+</table>

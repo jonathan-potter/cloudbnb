@@ -30,6 +30,28 @@ img {
   padding: 5px;
 }
 
+.non-sidebar {
+  width: 700px;
+  display: inline-block;
+}
+
+.tab-box {
+  display: inline-block;
+}
+
+.tab-data {
+  display: inline-block;
+  float:right;
+}
+
+.available-amenity {
+
+}
+
+.unavailable-amenity {
+  color: red;
+}
+
 .space-image {
   float: left;
   width: 118px;

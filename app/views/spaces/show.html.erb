@@ -1,5 +1,14 @@
-<h2><%= @space.title %></h2>
+<section class="group non-sidebar">
 
-<%= render "spaces/show/photos_map_calendar" %>
+  <h2><%= @space.title %></h2>
+  <h3><%= "#{Space.residence_types[@space.residence_type]} -
+           #{Space.room_types[@space.room_type]} -
+           #{@space.city}" %></h3>
+
+  <%= render "spaces/show/photos_map_calendar" %>
+
+  <%= render "spaces/show/description_amenities_house_rules" %>
+
+</section>
 
 <%= render "spaces/show/booking_sidebar" %>
