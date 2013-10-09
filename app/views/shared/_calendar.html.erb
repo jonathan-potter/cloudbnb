@@ -1,9 +1,8 @@
 <%= # Full featured
 calendar(:year => 2013, :month => 10) do |d|
-  fail
-  if listOfSpecialDays.include?(d)
-    [d.mday, {:class => "specialDay"}]
+  if bookings.include?(d)
+    [d.mday, {:class => "special-day"}]
   else
-    [d.mday, {:class => "normalDay"}]
+    [d.mday, {:class => "normal-day"}]
   end
 end %>

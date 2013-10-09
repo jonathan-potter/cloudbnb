@@ -2,4 +2,11 @@
 
 <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@space.latitude}%2C#{@space.longitude}" %>
 
+<%= render partial: "shared/calendar",
+           locals: {bookings: Booking.booked_dates_this_month_for_space(@space)} %>
+
+<% Booking.booked_dates_this_month_for_space(@space) do |d| %>
+  <%= "#{d} d" %>
+<% end %>
+
 <%= render "spaces/show/booking_sidebar" %>
