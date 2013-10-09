@@ -37,7 +37,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(params[:booking])
     unless @booking.has_initial_form_attributes
       flash[:notices] = ["you must fill out the booking form in order to book"]
-      redirect_to(:back)
+      redirect_to :back
     else
       @booking.user_id            = current_user.id
       @booking.booking_rate_daily = @booking.space.booking_rate_daily
@@ -50,10 +50,15 @@ class BookingsController < ApplicationController
 
       @booking.total              = subtotal + @booking.service_fee
 
-      if @booking.save
-        redirect_to edit_space_booking_url(@booking.space_id, @booking.id)
+      if @booking.is_free_of_conflicts?
+        if @booking.save
+          redirect_to edit_space_booking_url(@booking.space_id, @booking.id)
+        else
+          render status: 422
+        end
       else
-        render status: 422
+        flash[:notices] = ["You must select dates that aren't taken"]
+        redirect_to :back
       end
     end
   end

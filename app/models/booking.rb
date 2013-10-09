@@ -52,6 +52,10 @@ class Booking < ActiveRecord::Base
     .where("approval_status = ?" , Booking.approval_statuses[status])
   end
 
+  def is_free_of_conflicts?
+    !overlapping_requests(:approved)
+  end
+
   def decline_conflicting_pending_requests!
     overlapping_requests(:pending).each { |request| request.decline }
   end
