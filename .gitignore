@@ -13,3 +13,7 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+flickr_fu_token_cache.yml
+
+# Ignore application configuration
+/config/application.yml
