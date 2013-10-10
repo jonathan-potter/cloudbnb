@@ -1,3 +1,26 @@
 // Place all the styles related to the root controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#splash-container {
+  background: black;
+  position: relative;
+}
+
+#splash-container > #splash {
+  display: block;
+  height: 500px;
+  width: auto;
+  margin: auto;
+  padding: 0;
+}
+
+#splash-container > #root-page-search-bar {
+  position: absolute;
+  border-radius: 20px;
+  width: 600px;
+  height: 45px;
+  left: 50%;
+  top: 50%;
+  margin-left: -300px;
+}

@@ -16,15 +16,15 @@
 /*@import url(http://fonts.googleapis.com/css?family=Iceberg);*/
 
 body,h1,h2,h3,h4,h5,h6,p,img,a,ul,li,header,nav,img,main,section {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    font-family: sans-serif;
-    vertical-align: baseline;
-    text-decoration: none;
-    list-style-type: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  font-family: sans-serif;
+  vertical-align: baseline;
+  text-decoration: none;
+  list-style-type: none;
 }
 
 .group:after {

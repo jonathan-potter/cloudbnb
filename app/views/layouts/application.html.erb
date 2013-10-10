@@ -21,9 +21,13 @@
     </div>
   <% end %>
 
-  <main class="group">
-    <%= yield %>
-  </main>
+  <% unless params[:controller] == "root" %>
+    <main class="group">
+      <%= yield %>
+    </main>
+  <% else %>
+      <%= yield %>
+  <% end %>
 
   <footer>
     <%= yield :scripts %>
