@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131007194918) do
+ActiveRecord::Schema.define(:version => 20131010224251) do
 
   create_table "bookings", :force => true do |t|
     t.integer  "user_id",            :null => false
@@ -33,7 +33,6 @@ ActiveRecord::Schema.define(:version => 20131007194918) do
   create_table "spaces", :force => true do |t|
     t.integer  "owner_id",             :null => false
     t.string   "title",                :null => false
-    t.integer  "booking_rates",        :null => false
     t.integer  "booking_rate_daily"
     t.integer  "booking_rate_weekly"
     t.integer  "booking_rate_monthly"

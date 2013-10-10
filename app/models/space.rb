@@ -1,5 +1,5 @@
 class Space < ActiveRecord::Base
-  attr_accessible :owner_id, :title, :booking_rates, :booking_rate_daily,
+  attr_accessible :owner_id, :title, :booking_rate_daily,
   :booking_rate_weekly, :booking_rate_monthly, :residence_type, :bedroom_count,
   :bathroom_count, :room_type, :bed_type, :accommodates, :amenities, :description,
   :house_rules, :address, :city, :country, :latitude,
@@ -8,7 +8,7 @@ class Space < ActiveRecord::Base
   geocoded_by :address
   acts_as_gmappable process_geocoding: false
 
-  validates_presence_of :owner_id, :title, :booking_rates, :residence_type,
+  validates_presence_of :owner_id, :title, :residence_type,
   :bedroom_count, :bathroom_count, :room_type, :bed_type, :accommodates,
   :amenities, :description, :house_rules, :address, :city, :country
 
@@ -24,9 +24,7 @@ class Space < ActiveRecord::Base
 
 
   def self.booking_rates
-    ["Daily",
-     "Weekly",
-     "Monthly"]
+    ["Daily"]
   end
 
   def self.residence_types
@@ -149,10 +147,6 @@ class Space < ActiveRecord::Base
 
   def set_amenities_from_options_list!(options_list)
     self.amenities = Space.integer_from_options_list(options_list)
-  end
-
-  def set_booking_rates_from_options_list!(options_list)
-    self.booking_rates = Space.integer_from_options_list(options_list)
   end
 
   def set_address_given_components(street_address, city, country)

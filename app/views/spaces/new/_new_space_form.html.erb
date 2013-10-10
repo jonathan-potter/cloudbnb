@@ -25,13 +25,10 @@
     <textarea type="text" name="space[house_rules]" id="space-house_rules"
      value="<%= @space.house_rules %>"></textarea><br>
 
- <label for="space-booking_rates">Rate Plans</label><br>
+ <label for="space-booking_rates">Daily Rental Rate</label><br>
    <ul class="group" id="space-booking-rates">
      <% Space.booking_rates.each_with_index do |booking_rate, index| %>
        <li>
-         <input type="checkbox" name="space_booking_rates_indicies[]" value="<%= index %>">
-           <%= booking_rate %>
-         </input>
          <input type="number" name="space[booking_rate_<%= booking_rate.downcase %>]">
          </input>
        </li>
