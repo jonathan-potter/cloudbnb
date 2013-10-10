@@ -1,5 +1,5 @@
 <div id="splash-container">
-  <img src="http://farm6.staticflickr.com/5220/5408809722_2bbb143f75_b.jpg" alt="House by andrewmalone, on Flickr" id="splash">
+  <img src="<%= flickr.photos.search("tags" => "nice house").sample.url %>" alt="House by andrewmalone, on Flickr" id="splash">
   <form action="<%= spaces_url %>" class="group" id="root-page-search-bar">
 
     <input type="text" name="space_filters[city]" value="">

@@ -7,10 +7,9 @@
   position: relative;
 }
 
-#splash-container > #splash {
+#splash {
   display: block;
-  height: 500px;
-  width: auto;
+  width: 900px;
   margin: auto;
   padding: 0;
 }
@@ -21,6 +20,6 @@
   width: 600px;
   height: 45px;
   left: 50%;
-  top: 50%;
+  top: 250px;
   margin-left: -300px;
 }
