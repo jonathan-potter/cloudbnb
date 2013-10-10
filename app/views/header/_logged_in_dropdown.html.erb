@@ -1,0 +1,15 @@
+<li id="user-nav">
+  <ul>
+    <li>
+      <%= link_to image_tag("http://placekitten.com/35/35"), current_user, method: :get %>
+    </li>
+    <li>
+      <%= link_to current_user.first_name, current_user, method: :get %>
+    </li>
+  </ul>
+  <ul id="user-dropdown">
+    <li><%= link_to "profile", current_user, method: :get %></li>
+    <li><%= link_to "trips", bookings_url, method: :get %></li>
+    <li><%= link_to "log out", session_url, method: :delete  %></li>
+  </ul>
+</li>
