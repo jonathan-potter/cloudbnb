@@ -30,6 +30,10 @@ class User < ActiveRecord::Base
     self.save!
   end
 
+  def initiated_bookings
+    self.bookings.where("approval_status != 0")
+  end
+
   private
 
   def ensure_session_token
