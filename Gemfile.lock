@@ -60,6 +60,9 @@ GEM
     execjs (2.0.2)
     faker (1.2.0)
       i18n (~> 0.5)
+    flickr_fu (0.3.2)
+      mime-types
+      xml-magic
     geocoder (1.1.8)
     gmaps4rails (1.5.6)
     hike (1.2.3)
@@ -127,6 +130,7 @@ GEM
     uglifier (2.2.1)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
+    xml-magic (0.1.1)
 
 PLATFORMS
   ruby
@@ -139,6 +143,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   debugger
   faker
+  flickr_fu
   geocoder
   gmaps4rails
   jquery-rails
