@@ -147,7 +147,7 @@ DEPENDENCIES
   debugger
   faker
   figaro
-  flickr_fu
+  flickr_fu (~> 0.3.2)
   geocoder
   gmaps4rails
   jquery-rails
