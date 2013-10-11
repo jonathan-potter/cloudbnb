@@ -27,6 +27,8 @@ class SpacesController < ApplicationController
                                         @space.city,
                                         @space.country)
 
+    @space.photo_url = space_photos.sample.url
+
     if @space.save
       redirect_to @space
     else

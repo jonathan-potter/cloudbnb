@@ -17,6 +17,8 @@ class UsersController < ApplicationController
       @user.email = params[:user][:email].downcase
     end
 
+    @user.photo_url = user_photos.sample.url
+
     if @user.save
       login_user!(@user)
       redirect_to root_url

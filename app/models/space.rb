@@ -3,7 +3,7 @@ class Space < ActiveRecord::Base
   :booking_rate_weekly, :booking_rate_monthly, :residence_type, :bedroom_count,
   :bathroom_count, :room_type, :bed_type, :accommodates, :amenities, :description,
   :house_rules, :address, :city, :country, :latitude,
-  :longitude, :amenities_indicies, :booking_rate_indicies
+  :longitude, :amenities_indicies, :booking_rate_indicies, :photo_url
 
   geocoded_by :address
   acts_as_gmappable process_geocoding: false

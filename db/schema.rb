@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131010224251) do
+ActiveRecord::Schema.define(:version => 20131011014330) do
 
   create_table "bookings", :force => true do |t|
     t.integer  "user_id",            :null => false
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20131010224251) do
   create_table "spaces", :force => true do |t|
     t.integer  "owner_id",             :null => false
     t.string   "title",                :null => false
+    t.integer  "booking_rates",        :null => false
     t.integer  "booking_rate_daily"
     t.integer  "booking_rate_weekly"
     t.integer  "booking_rate_monthly"
@@ -52,6 +53,7 @@ ActiveRecord::Schema.define(:version => 20131010224251) do
     t.float    "longitude"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
+    t.string   "photo_url"
   end
 
   add_index "spaces", ["booking_rate_daily"], :name => "index_spaces_on_booking_rate_daily"
@@ -69,6 +71,7 @@ ActiveRecord::Schema.define(:version => 20131010224251) do
     t.string   "first_name",      :null => false
     t.string   "last_name",       :null => false
     t.string   "session_token"
+    t.string   "photo_url"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email"
