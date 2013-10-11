@@ -15,6 +15,7 @@ group :development do
   gem 'debugger'
   gem 'quiet_assets'
   gem 'faker'
+  gem 'launchy'
 end
 
 gem 'jquery-rails'
