@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
 
   after_initialize :ensure_session_token
 
+  has_many :user_photos
   has_many :bookings
   has_many :trips, through: :bookings, source: :space
   has_many :spaces,
@@ -35,7 +36,9 @@ class User < ActiveRecord::Base
   end
 
   def photo
-    self.photo_url || "http://placekitten.com/g/400/400"
+    # self.photo_url || "http://placekitten.com/g/400/400"
+    photo = self.user_photos.sample
+    photo ? photo.url : "http://placekitten.com/g/400/400"
   end
 
   private

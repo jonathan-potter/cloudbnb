@@ -14,7 +14,7 @@ class Space < ActiveRecord::Base
 
   after_validation :geocode, if: :address_changed?
 
-
+  has_many :space_photos
   has_many :bookings
   has_many :visitors, through: :bookings, source: :user
   belongs_to :owner,
@@ -145,7 +145,7 @@ class Space < ActiveRecord::Base
   end
 
   def self.random_space_with_photo
-    Space.where("photo_url IS NOT NULL").sample
+    SpacePhoto.where("space_id IS NOT NULL").sample
   end
 
   def set_amenities_from_options_list!(options_list)
@@ -209,7 +209,9 @@ class Space < ActiveRecord::Base
   end
 
   def photo
-    self.photo_url || "http://placekitten.com/g/117/77"
+    # self.photo_url || "http://placekitten.com/g/117/77"
+    photo = self.space_photos.sample
+    photo ? photo.url : "http://placekitten.com/g/117/77"
   end
 
 end

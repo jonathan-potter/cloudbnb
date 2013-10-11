@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131011014330) do
+ActiveRecord::Schema.define(:version => 20131011174832) do
 
   create_table "bookings", :force => true do |t|
     t.integer  "user_id",            :null => false
@@ -30,10 +30,22 @@ ActiveRecord::Schema.define(:version => 20131011014330) do
   add_index "bookings", ["space_id"], :name => "index_bookings_on_space_id"
   add_index "bookings", ["user_id"], :name => "index_bookings_on_user_id"
 
+  create_table "space_photos", :force => true do |t|
+    t.integer  "space_id"
+    t.string   "url",                            :null => false
+    t.string   "flickr_title",                   :null => false
+    t.string   "flickr_owner_name",              :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+    t.integer  "flickr_id",         :limit => 8, :null => false
+  end
+
+  add_index "space_photos", ["flickr_id"], :name => "index_space_photos_on_flickr_id"
+  add_index "space_photos", ["space_id"], :name => "index_space_photos_on_space_id"
+
   create_table "spaces", :force => true do |t|
     t.integer  "owner_id",             :null => false
     t.string   "title",                :null => false
-    t.integer  "booking_rates",        :null => false
     t.integer  "booking_rate_daily"
     t.integer  "booking_rate_weekly"
     t.integer  "booking_rate_monthly"
@@ -54,6 +66,7 @@ ActiveRecord::Schema.define(:version => 20131011014330) do
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
     t.string   "photo_url"
+    t.integer  "space_photo_id"
   end
 
   add_index "spaces", ["booking_rate_daily"], :name => "index_spaces_on_booking_rate_daily"
@@ -62,6 +75,19 @@ ActiveRecord::Schema.define(:version => 20131011014330) do
   add_index "spaces", ["latitude"], :name => "index_spaces_on_latitude"
   add_index "spaces", ["longitude"], :name => "index_spaces_on_longitude"
   add_index "spaces", ["owner_id"], :name => "index_spaces_on_owner_id"
+
+  create_table "user_photos", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "url",                            :null => false
+    t.string   "flickr_title",                   :null => false
+    t.string   "flickr_owner_name",              :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+    t.integer  "flickr_id",         :limit => 8, :null => false
+  end
+
+  add_index "user_photos", ["flickr_id"], :name => "index_user_photos_on_flickr_id"
+  add_index "user_photos", ["user_id"], :name => "index_user_photos_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",           :null => false
@@ -72,6 +98,7 @@ ActiveRecord::Schema.define(:version => 20131011014330) do
     t.string   "last_name",       :null => false
     t.string   "session_token"
     t.string   "photo_url"
+    t.integer  "user_photo_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email"

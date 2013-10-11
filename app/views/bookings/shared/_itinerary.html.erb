@@ -1,6 +1,6 @@
 <header class="group">
   <h1>The Listing</h1>
-  <%= link_to image_tag("http://placekitten.com/117/77", class: "space-image"), @space, method: :get %>
+  <%= link_to image_tag(@space.photo, class: "space-image space-image-small"), @space, method: :get %>
   <h2><%= @space.title %></h2>
   <div>
     <div>

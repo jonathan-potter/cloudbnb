@@ -17,9 +17,10 @@ class UsersController < ApplicationController
       @user.email = params[:user][:email].downcase
     end
 
-    @user.photo_url = user_photos.sample.url
 
     if @user.save
+      user_photo = UserPhoto.unattached_photo
+      user_photo.update_attributes(user_id: @user.id)
       login_user!(@user)
       redirect_to @user
     else

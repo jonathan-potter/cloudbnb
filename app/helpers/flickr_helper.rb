@@ -3,11 +3,11 @@ module FlickrHelper
     @flickr ||= Flickr.new(key: ENV["FLICKR_KEY"], secret: ENV["FLICKR_SECRET"])
   end
 
-  def space_photos
+  def flickr_space_photos
     @photos ||= flickr.photos.search("tags" => "beach house")
   end
 
-  def user_photos
+  def flickr_user_photos
     @photos ||= flickr.photos.search("tags" => "selfie")
   end
 end

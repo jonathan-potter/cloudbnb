@@ -27,9 +27,10 @@ class SpacesController < ApplicationController
                                         @space.city,
                                         @space.country)
 
-    @space.photo_url = space_photos.sample.url
 
     if @space.save
+      space_photo = SpacePhoto.unattached_photo
+      space_photo.update_attributes(space_id: @space.id)
       redirect_to @space
     else
       flash.now[:errors] << @space.errors
