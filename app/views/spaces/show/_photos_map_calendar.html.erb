@@ -1,5 +1,7 @@
 <div class="group tab-box">
 
+  <%= image_tag @space.photo, class: "space-image-large"%>
+
   <%= image_tag "http://maps.google.com/maps/api/staticmap?size=300x300&sensor=false&zoom=16&markers=#{@space.latitude}%2C#{@space.longitude}",
                 class: "space-map"%>
 

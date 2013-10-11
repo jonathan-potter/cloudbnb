@@ -23,7 +23,7 @@
 
   <nav>
 
-    <div id="owner-img"><%= link_to image_tag("http://placekitten.com/150/150"), @space.owner, method: :get %></div>
+    <div id="owner-img"><%= link_to image_tag(@space.owner.photo, class: "user-image-medium"), @space.owner, method: :get %></div>
 
     <h3><%= "#{@space.owner.first_name}" %></h3>
 

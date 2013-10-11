@@ -22,7 +22,6 @@ class Space < ActiveRecord::Base
   foreign_key: :owner_id,
   primary_key: :id
 
-
   def self.booking_rates
     ["Daily"]
   end
@@ -145,6 +144,10 @@ class Space < ActiveRecord::Base
     filtered_spaces == Space ? Space.all : filtered_spaces
   end
 
+  def self.random_space_with_photo
+    Space.where("photo_url IS NOT NULL").sample
+  end
+
   def set_amenities_from_options_list!(options_list)
     self.amenities = Space.integer_from_options_list(options_list)
   end
@@ -205,5 +208,8 @@ class Space < ActiveRecord::Base
     end
   end
 
+  def photo
+    self.photo_url || "http://placekitten.com/g/117/77"
+  end
 
 end

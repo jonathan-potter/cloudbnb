@@ -8,6 +8,6 @@ module FlickrHelper
   end
 
   def user_photos
-    @photos ||= flickr.photos.search("tags" => "friends friend")
+    @photos ||= flickr.photos.search("tags" => "selfie")
   end
 end

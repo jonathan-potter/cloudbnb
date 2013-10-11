@@ -1,6 +1,6 @@
 <nav class="group user-image-box sidebar left">
 
-  <div><%= link_to image_tag("http://placekitten.com/150/150"), @user, method: :get %></div>
+  <div><%= link_to image_tag(@user.photo, class: "user-image-medium"), @user, method: :get %></div>
 
   <h3><%= "#{@user.first_name}" %></h3>
   <h2><%= "Member since: #{@user.created_at.to_date}" %></h2>

@@ -34,6 +34,10 @@ class User < ActiveRecord::Base
     self.bookings.where("approval_status != 0")
   end
 
+  def photo
+    self.photo_url || "http://placekitten.com/g/400/400"
+  end
+
   private
 
   def ensure_session_token
