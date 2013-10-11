@@ -3,8 +3,9 @@ class SpacesController < ApplicationController
   def index
     if params[:space_filters]
       @spaces = Space.find_with_filters(params[:space_filters])
+      @spaces = @spaces[0..13]
     else
-      @spaces = Space.all
+      @spaces = Space.find(limit: 14)
     end
 
     @json = @spaces.to_gmaps4rails
