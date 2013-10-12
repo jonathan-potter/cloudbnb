@@ -1,8 +1,8 @@
 <div id="splash-container">
-  <img src="<%= Space.random_space_with_photo.url %>" alt="House by andrewmalone, on Flickr" id="splash">
+  <img src="<%= Space.random_space_with_photo.url %>" id="splash">
   <form action="<%= spaces_url %>" class="group" id="root-page-search-bar">
 
-    <input type="text" name="space_filters[city]" value="">
+    <input type="text" class="text-input" name="space_filters[city]" value="">
 
     <input type="date" name="space_filters[start_date]">
 
@@ -11,7 +11,7 @@
     <%= select_numerical_given_options(label: "",
                                    html_name: "space_filters[guest_count]") %>
 
-    <input type="submit" value="Search" id="search-button">
+    <input type="submit" value="Search" class="button blue" id="search-button">
 
   </form>
 </div>

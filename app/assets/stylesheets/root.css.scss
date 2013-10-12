@@ -14,12 +14,24 @@
   padding: 0;
 }
 
-#splash-container > #root-page-search-bar {
+#root-page-search-bar {
+  background: rgba(0,0,0,0.6);
   position: absolute;
-  border-radius: 20px;
-  width: 600px;
-  height: 45px;
+  border-radius: 3px;
+  border: 1px solid black;
+  height: 50px;
+  width: auto;
   left: 50%;
   top: 250px;
   margin-left: -300px;
+}
+
+#header-button {
+  height: 21px;
+  font-size: 15px;
+  margin: 5px;
+}
+
+#search-button {
+  margin-right: 5px;
 }
