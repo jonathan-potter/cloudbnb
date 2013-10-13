@@ -1,16 +1,43 @@
 /* CLEAR STUFF */
 
-.button, select {
+.button, select, input {
   padding: 0;
   border: 0;
   margin: 0;
 }
 
-/* BUTTONS */
-
 .button, select {
   font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-size: 15px;
+  padding: 10px 19px;
+  border-radius: 2px;
+  margin: 6px 0px;
+}
+
+input {
+  font-size: 15px;
+}
+
+input:focus {
+  outline: 1px solid #DF67A2;
+}
+
+.input-large {
+  padding: 10px 19px;
+  background: blue;
+}
+
+.input-medium {
+  padding: 5px;
+}
+
+.input-long {
+  width: 300px;
+}
+
+/* BUTTONS */
+
+.button, select {
   font-weight: bold;
   padding: 10px 19px;
   border-radius: 2px;
@@ -19,6 +46,11 @@
 
 /* TEXT INPUT */
 
+.text-input {
+  display: inline-block;;
+  background: white;
+  outline: none;
+}
 /* DATE INPUT */
 
 /* SELECT INPUT */

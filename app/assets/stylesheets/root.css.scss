@@ -23,7 +23,7 @@
   width: auto;
   left: 50%;
   top: 250px;
-  margin-left: -300px;
+  margin-left: -440px;
 }
 
 #header-button {
@@ -34,4 +34,13 @@
 
 #search-button {
   margin-right: 5px;
+}
+
+#root-input-city-name {
+  margin-left: 5px;
+  width: 320px;
+}
+
+#root-input-city-name:focus {
+  margin-left: 5px;
 }

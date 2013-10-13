@@ -1,5 +1,8 @@
 <form action="<%= spaces_url %>" method="get">
 
-  <input type="text" name="space_filters[city]" value="">
+  <%= render partial: "inputs/text_input",
+             locals: {options: {"placeholder" => "Where are you going?",
+                                  "html_name" => "space_filters[city]",
+                                         "id" => "header-location input-medium"}}  %>
 
 </form>

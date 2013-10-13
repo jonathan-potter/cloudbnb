@@ -1,16 +1,21 @@
 <h1>Sign In</h1>
 
 <form action="<%= session_url %>" method="post">
-  <input
-     name="authenticity_token"
-     type="hidden"
-     value="<%= form_authenticity_token %>">
+  <input name="authenticity_token"
+         type="hidden"
+         value="<%= form_authenticity_token %>">
 
-  <label for="user_email">Email:</label>
-  <input id="user_email" name="user[email]" type="text"><br>
+    <%= tag "input", type: "email",
+              placeholder: "Email Address",
+                     name: "user[email]",
+                    class: "input-medium input-long" %><br>
 
-  <label for="user_password">Password:</label>
-  <input id="user_password" name="user[password]" type="password"><br>
+    <%= tag "input", type: "password",
+              placeholder: "Password",
+                     name: "user[password]",
+                    class: "input-medium input-long" %><br>
 
-  <input type="submit" value="Log in">
+    <%= tag "input", type: "submit",
+                    value: "Log in",
+                    class: "button blue" %>
 </form>
