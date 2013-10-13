@@ -24,11 +24,14 @@ input:focus {
 
 .input-large {
   padding: 10px 19px;
-  background: blue;
 }
 
 .input-medium {
   padding: 5px;
+}
+
+.input-small {
+  padding: 3px;
 }
 
 .input-long {
@@ -44,6 +47,10 @@ input:focus {
   margin: 6px 0px;
 }
 
+.button:focus {
+  outline: 0;
+}
+
 /* TEXT INPUT */
 
 .text-input {
@@ -52,6 +59,14 @@ input:focus {
   outline: none;
 }
 /* DATE INPUT */
+
+.date-input {
+  -webkit-appearance: none;
+}
+
+.date-input::-webkit-inner-spin-button {
+  display: none;
+}
 
 /* SELECT INPUT */
 
@@ -65,4 +80,13 @@ select {
   padding-right: 33px;
 }
 
+/* NUMBER INPUT */
 
+.number-input::-webkit-inner-spin-button {
+  display: none;
+}
+
+/* checkbox */
+
+.input-checkbox {
+}

@@ -9,7 +9,7 @@
   background: #2badf3;
 };
 
-/* BLUE */
+/* YELLOW-ORANGE */
 
 .yellow-orange {
   color: black;
@@ -18,4 +18,20 @@
 
 .yellow-orange:hover {
   background: #fce359;
+}
+
+/* links */
+
+a {
+  color: rgb(29, 149, 203); // blue
+}
+
+a:visited {
+  color: rgb(85, 26, 139); // purple
+}
+
+/* LIGHT GRAY */
+
+.light-gray {
+  color: rgb(132, 132, 132);
 }

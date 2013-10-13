@@ -1,19 +1,24 @@
-<li class="group space-index-list-item">
-  <!-- replace these images with space and user images -->
-  <%= link_to image_tag(space.photo, class: "space-image space-image-small"), space, method: :get %>
+<li class="group list-item">
+
+  <a href=<%= space_url(space.id) %> class="space-image-wrapper">
+    <%= image_tag(space.photo, class: "space-image space-image-small") %>
+    <span class="map-number"><%= space_counter + 1 %></span>
+  </a>
+
   <%= link_to image_tag(space.owner.photo, class: "host-image user-image-thumb"), user_url(space.owner_id), method: :get %>
 
   <header>
     <h3>
       <%= link_to space.title, space, method: :get%>
     </h3>
-    <h4>
+    <h4 class="light-gray">
       <%= Space.room_types[space.room_type] %> -
       <%= space.city %>
     </h4>
   </header>
 
   <div class="price-data">
-    $<%= space.booking_rate_daily %>
+    <sup>$</sup>
+    <%= space.booking_rate_daily %>
   </div>
 </li>

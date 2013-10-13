@@ -4,36 +4,52 @@
 
 #splash-container {
   background: black;
-  position: relative;
+  margin: auto;
+  min-width: 1024px;
 }
 
 #splash {
   display: block;
+  position: relative;
   width: 900px;
   margin: auto;
   padding: 0;
 }
 
+#root-page-search-bar-container {
+  position: absolute;
+  min-width: 935px;
+  margin: 0 110px;
+  top: 250px;
+}
+
+#root-page-search-bar-container > h1, h3 {
+  font-weight: bold;
+  color: white;
+}
+
+#root-page-search-bar-container > h1 {
+  font-family: shift;
+  font-size: 48px;
+}
+
+#root-page-search-bar-container > h3 {
+  font-family: shift;
+  font-size: 20px;
+  padding-bottom: 15px;
+}
+
 #root-page-search-bar {
   background: rgba(0,0,0,0.6);
-  position: absolute;
   border-radius: 3px;
   border: 1px solid black;
   height: 50px;
   width: auto;
-  left: 50%;
-  top: 250px;
-  margin-left: -440px;
 }
 
 #header-button {
-  height: 21px;
   font-size: 15px;
   margin: 5px;
-}
-
-#search-button {
-  margin-right: 5px;
 }
 
 #root-input-city-name {
@@ -41,6 +57,7 @@
   width: 320px;
 }
 
-#root-input-city-name:focus {
-  margin-left: 5px;
+#search-button {
+  margin-right: 5px;
 }
+

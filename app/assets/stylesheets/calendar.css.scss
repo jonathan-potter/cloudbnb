@@ -1,0 +1,29 @@
+.special-day {
+  color: #CCC;
+  background: #AAA;
+  border: 1px solid black;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+}
+
+.normal-day {
+  background: #EEE;
+  border: 1px solid black;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+}
+
+.otherMonth {
+  color: #CCC;
+  background: #666;
+  border: 1px solid black;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+}
+
+.calendar {
+  display: inline-block;
+}

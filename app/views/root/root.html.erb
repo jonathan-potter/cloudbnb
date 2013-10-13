@@ -1,21 +1,34 @@
 <div id="splash-container">
   <img src="<%= Space.random_space_with_photo.url %>" id="splash">
-  <form action="<%= spaces_url %>" class="group" id="root-page-search-bar">
 
-    <%= render partial: "inputs/text_input",
-               locals: {options: {"placeholder" => "Where do you want to go?",
-                                    "html_name" => "space_filters[city]",
-                                           "id" => "root-input-city-name",
-                                        "class" => "text-input input-large"}}  %>
+  <div class="group" id="root-page-search-bar-container">
+    <h1>Find a place to stay.</h1>
+    <h3>Rent from over 20 fake users</h3>
+    <form action="<%= spaces_url %>" class="group" id="root-page-search-bar">
 
-    <input type="date" name="space_filters[start_date]">
+      <%= tag "input", type: "text",
+                placeholder: "Where do you want to go?",
+                       name: "space_filters[city]",
+                      class: "text-input input-large",
+                         id: "root-input-city-name" %>
 
-    <input type="date" name="space_filters[end_date]">
+      <%= tag "input", type: "date",
+                      value: "",
+                placeholder: "Check in",
+                       name: "space_filters[start_date]",
+                      class: "date-input input-large" %>
 
-    <%= select_numerical_given_options(label: "",
-                                   html_name: "space_filters[guest_count]") %>
+      <%= tag "input", type: "date",
+                      value: "",
+                placeholder: "Check out",
+                       name: "space_filters[end_date]",
+                      class: "date-input input-large" %>
 
-    <input type="submit" value="Search" class="button blue" id="search-button">
+      <%= select_numerical_given_options(label: "",
+                                     html_name: "space_filters[guest_count]") %>
 
-  </form>
+      <input type="submit" value="Search" class="button blue" id="search-button">
+
+    </form>
+  </div>
 </div>

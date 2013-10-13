@@ -1,5 +1,6 @@
-
-
+img {
+  padding: 5px;
+}
 
 .user-image-medium, .space-image-large {
   width: 300px;
@@ -14,6 +15,20 @@
 .user-image-thumb, .space-image-thumb {
   width: 35px;
   height: 35px;
+  border-radius: 9px;
+}
+
+.space-image {
+  float: left;
+  width: 118px;
+  height: 77px;
+  padding: 3px;
+  border: 1px solid #DDD;
+  border-radius: 2px;
+}
+
+.host-image {
+  float: left;
 }
 
 //something {

@@ -6,14 +6,6 @@ section {
   display: inline;
 }
 
-.left {
-  float: left;
-}
-
-.right {
-  float: right;
-}
-
 .sidebar {
   width:250px;
 }
@@ -32,14 +24,39 @@ section {
   float: right;
 }
 
-.space-index-list-item {
+.list-item {
   width: 720px;
   padding: 10px;
   border-bottom: 1px solid #CCC;
 }
 
-img {
-  padding: 5px;
+.list-item:first-child {
+  border-top: 1px solid #CCC;
+}
+
+.list-item > header {
+  float: left;
+}
+
+.list-item > .price-data {
+  float: right;
+}
+
+.list-item > header > h3{
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.list-item > header > h4{
+  font-size: 13px;
+}
+
+.list-item > .price-data {
+  font-size: 36px;
+}
+
+.list-item > .price-data > sup {
+  font-size: 24px;
 }
 
 .non-sidebar {
@@ -64,57 +81,21 @@ img {
   color: red;
 }
 
-.space-image {
-  float: left;
-  width: 118px;
-  height: 77px;
-}
-
-.host-image {
-  float: left;
-  width: 35px;
-  height: 35px;
-}
-
-.space-index-list-item > header {
-  float: left;
-}
-
-.space-index-list-item > .price-data {
-  float: right;
-}
-
-.special-day {
-  color: #CCC;
-  background: #AAA;
-  border: 1px solid black;
-  width: 40px;
-  height: 40px;
-  text-align: center;
-}
-
-.normal-day {
-  background: #EEE;
-  border: 1px solid black;
-  width: 40px;
-  height: 40px;
-  text-align: center;
-}
-
-.otherMonth {
-  color: #CCC;
-  background: #666;
-  border: 1px solid black;
-  width: 40px;
-  height: 40px;
-  text-align: center;
-}
-
-.calendar {
-  display: inline-block;
-}
-
 .space-map {
   width: 300px;
   height: 300px;
+}
+
+.space-image-wrapper {
+  position: relative;
+}
+
+.space-image-wrapper > .map-number {
+  position: absolute;
+  background: white;
+  left: -125px;
+  top: 1px;
+  padding: 3px;
+  color: rgb(146, 146, 146);
+  font-size: 13px;
 }

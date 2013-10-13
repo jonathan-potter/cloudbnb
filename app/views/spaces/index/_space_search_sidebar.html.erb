@@ -5,35 +5,39 @@
 <form id="sidebar-filters">
   <h4>Room Type</h4>
   <%= checkbox_group collection: Space.room_types,
-                     ul_class:   "checkbox-li",
-                     html_name:  "space_filters[room_types]" %>
+                       ul_class:   "checkbox-li",
+                      html_name:  "space_filters[room_types]" %>
 
-  <h4>Price</h4>
-  <label>Min:
-    <input type="number" name="space_filters[booking_rate_min]"></input>
-  </label><br>
+  <h4>Price Range</h4>
+  <%= tag "input", type: "number",
+            placeholder: "Price min",
+                   name: "space_filters[booking_rate_min]",
+                  class: "number-input input-small" %>
 
-  <label>Max:
-    <input type="number" name="space_filters[booking_rate_max]"></input>
-  </label>
+  <%= tag "input", type: "number",
+            placeholder: "Price max",
+                   name: "space_filters[booking_rate_max]",
+                  class: "number-input input-small" %>
 
   <h4>Guest Count</h4>
   <%= select_numerical_given_options(label: "",
                                  html_name: "space_filters[guest_count]",
-                                    limits: [1,16]) %>
+                                    limits: [1,16]) %><br>
 
-  <label>Check in<br>
-    <input type="date" name="space_filters[start_date]">
-  </label>
+  <%= tag "input", type: "date",
+            placeholder: "Check in",
+                   name: "space_filters[start_date]",
+                  class: "date-input input-small" %>
 
-  <label>Check out<br>
-    <input type="date" name="space_filters[end_date]">
-  </label>
+  <%= tag "input", type: "date",
+            placeholder: "Check out",
+                   name: "space_filters[end_date]",
+                  class: "date-input input-small" %>
 
   <h4>Amenities</h4>
   <%= checkbox_group collection: Space.amenities_list,
                      ul_class:   "checkbox-li",
                      html_name:  "space_filters[amenities]" %>
 
-  <button action="<%= spaces_url %>">Filter</button>
+  <input type="submit" class="button blue" value="Filter">
 </form>
