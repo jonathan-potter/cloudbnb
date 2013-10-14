@@ -3,17 +3,21 @@
          type="hidden"
          value="<%= form_authenticity_token %>">
 
-    <%= tag "input", type: "email",
-              placeholder: "Email Address",
-                     name: "user[email]",
-                    class: "input-medium input-long" %><br>
+    <label for="email-address">Email address</label>
+      <%= tag "input", type: "email",
+                placeholder: "Email address",
+                       name: "user[email]",
+                      class: "input-medium input-long",
+                         id: "email-address" %><br>
 
-    <%= tag "input", type: "password",
-              placeholder: "Password",
-                     name: "user[password]",
-                    class: "input-medium input-long" %><br>
+    <label for="email-address">Password</label>
+      <%= tag "input", type: "password",
+                placeholder: "Password",
+                       name: "user[password]",
+                      class: "input-medium input-long",
+                         id: "password" %><br>
 
     <%= tag "input", type: "submit",
                     value: "Sign in",
-                    class: "button blue input-large" %>
+                    class: "button blue input-large label-offset-button" %>
 </form>

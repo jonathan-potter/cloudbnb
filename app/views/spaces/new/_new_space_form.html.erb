@@ -5,96 +5,90 @@
      <%= tag "input", type: "text",
                placeholder: "Awesome Flat Near Everything!",
                       name: "space[title]",
-                     class: "input-long",
+                     class: "input-long input-small",
                         id: "space-title" %><br>
 
   <label for="space-street-address">Street Address</label>
-     <%= tag "input", type: "text",
-               placeholder: "1234 Streetplace Rd.",
-                      name: "space[address]",
-                     class: "input-long",
-                        id: "space-street-address" %><br>
+    <%= tag "input", type: "text",
+              placeholder: "1234 Streetplace Rd.",
+                     name: "space[address]",
+                    class: "input-long input-small",
+                       id: "space-street-address" %><br>
 
   <label for="space-city">City</label>
-     <%= tag "input", type: "text",
-               placeholder: "New York City, NY",
-                      name: "space[city]",
-                     class: "input-long",
-                        id: "space-city" %><br>
+    <%= tag "input", type: "text",
+              placeholder: "New York City, NY",
+                     name: "space[city]",
+                    class: "input-long input-small",
+                       id: "space-city" %><br>
 
   <label for="space-country">Country</label>
-     <%= tag "input", type: "text",
-               placeholder: "United States of America",
-                      name: "space[country]",
-                     class: "input-long",
-                        id: "space-country" %><br>
+    <%= tag "input", type: "text",
+              placeholder: "United States of America",
+                     name: "space[country]",
+                    class: "input-long input-small",
+                       id: "space-country" %><br>
 
-  <label for="space-description">Description</label><br>
-    <textarea type="text" name="space[description]" id="space-description"
-     value="<%= @space.description %>"></textarea><br>
-     <%= tag "textarea", type: "text",
-               placeholder: "United States of America",
-                      name: "space[country]",
-                     class: "input-long",
-                        id: "space-country" %><br>
+  <label for="space-description" class="top">Description</label>
+    <%= tag "textarea", name: "space[description]",
+                 placeholder: "Super awesome description.",
+                       class: "input-long input-small",
+                          id: "space-description" %></textarea><br>
 
-  <label for="space-house_rules">House Rules</label><br>
-    <textarea type="text" name="space[house_rules]" id="space-house_rules"
-     value="<%= @space.house_rules %>"></textarea><br>
+  <label for="space-house-rules" class="top">House Rules</label>
+    <%= tag "textarea", name: "space[house_rules]",
+                 placeholder: "Please don't tear up my place.",
+                       class: "input-long input-small",
+                          id: "space-house-rules" %></textarea><br>
 
- <label for="space-booking_rates">Daily Rental Rate</label><br>
-   <ul class="group" id="space-booking-rates">
-     <% Space.booking_rates.each_with_index do |booking_rate, index| %>
-       <li>
-         <input type="number" name="space[booking_rate_<%= booking_rate.downcase %>]">
-         </input>
-       </li>
-     <% end %>
-   </ul><br>
+  <label for="space-booking_rates">Daily Rental Rate</label>
+    <%= tag "input", type: "number",
+              placeholder: "50",
+                    class: "number-input input-long input-small"%><br>
 
-  <label for="space-residence-type">Home Type</label><br>
+  <label for="space-residence-type">Home Type</label>
     <select type="text" name="space[residence_type]" id="space-residence-type">
       <% Space.residence_types.each_with_index do |residence_type, index| %>
         <option value="<%= index %>"><%= residence_type %></option>
       <% end %>
     </select><br>
 
-  <label for="space-bedroom-count">Bedroom Count</label><br>
+  <label for="space-bedroom-count">Bedroom Count</label>
     <select type="text" name="space[bedroom_count]" id="space-bedroom-count">
       <% Space.numerical_options.each_with_index do |bedroom_count, index| %>
         <option value="<%= index %>"><%= bedroom_count %></option>
       <% end %>
     </select><br>
 
-  <label for="space-bathroom-count">Bathroom Count</label><br>
+  <label for="space-bathroom-count">Bathroom Count</label>
     <select type="text" name="space[bathroom_count]" id="space-bedroom-count">
       <% Space.numerical_options.each_with_index do |bathroom_count, index| %>
         <option value="<%= index %>"><%= bathroom_count %></option>
       <% end %>
     </select><br>
 
-  <label for="space-room-type">Room Type</label><br>
+  <label for="space-room-type">Room Type</label>
     <select type="text" name="space[room_type]" id="space-room-type">
       <% Space.room_types.each_with_index do |room_type, index| %>
         <option value="<%= index %>"><%= room_type %></option>
       <% end %>
     </select><br>
 
-  <label for="space-bed-type">Bed Type</label><br>
+  <label for="space-bed-type">Bed Type</label>
     <select type="text" name="space[bed_type]" id="space-bed-type">
       <% Space.bed_types.each_with_index do |bed_type, index| %>
         <option value="<%= index %>"><%= bed_type %></option>
       <% end %>
     </select><br>
 
-  <label for="space-accomodates">Accommodates</label><br>
+  <label for="space-accomodates">Accommodates</label>
     <select type="text" name="space[accommodates]" id="space-accomodates">
       <% Space.numerical_options.each_with_index do |accomodates, index| %>
         <option value="<%= index %>"><%= accomodates %></option>
       <% end %>
     </select><br>
 
-  <label for="space-amenities">Amenities</label><br>
+  <label for="space-amenities" class="top">Amenities</label>
     <ul class="group" id="space-amenities">
       <% Space.amenities_list.each_with_index do |amenity, index| %>
         <li class="checkbox-li">
@@ -105,5 +99,5 @@
       <% end %>
     </ul><br>
 
-  <input type="submit" class="button blue input-large" value="Create space">
+  <input type="submit" class="button blue input-large label-offset-button" value="Create space">
 </form>

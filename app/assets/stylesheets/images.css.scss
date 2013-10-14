@@ -8,8 +8,8 @@ img {
 }
 
 .user-image-medium, .space-image-medium {
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
 }
 
 .user-image-thumb, .space-image-thumb {
@@ -17,6 +17,13 @@ img {
   height: 35px;
   border-radius: 9px;
 }
+
+.image-micro-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 9px;
+}
+
 
 .space-image {
   float: left;

@@ -8,6 +8,15 @@
 
 label {
   color: rgb(90,90,90);
+  display: inline-block;
+  width: 200px;
+  text-align: right;
+  margin-right: 4px;
+}
+
+label.top {
+  vertical-align: top;
+  padding-top: 8px;
 }
 
 .button, select {
@@ -19,6 +28,7 @@ label {
 input, textarea {
   font-size: 15px;
   border: 1px solid rgb(204,204,204);
+  margin: 4px 0;
 }
 
 input:focus, textarea:focus {
@@ -55,6 +65,11 @@ input:focus, textarea:focus {
 .button:focus {
   border: 0;
   outline: 0;
+}
+
+.label-offset-button {
+  margin-left: 207px;
+  display: inline-block;
 }
 
 /* TEXT INPUT */
@@ -95,11 +110,17 @@ select {
 
 /* NUMBER INPUT */
 
-.number-input::-webkit-inner-spin-button {
-  display: none;
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 /* checkbox */
 
-.input-checkbox {
+
+.checkbox-li {
+  width: 250px;
+  display: inline-block;
+  float: left;
 }

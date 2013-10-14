@@ -1,30 +1,31 @@
 <form action="<%= users_url %>" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
+  <label for="email-address">First name</label>
   <%= tag "input", type: "input",
             placeholder: "First name",
                    name: "user[first_name]",
-                  class: "input-medium" %><br>
-
+                  class: "input-medium input-long" %><br>
+  <label for="email-address">Last name</label>
   <%= tag "input", type: "input",
             placeholder: "Last name",
                    name: "user[last_name]",
-                  class: "input-medium" %><br>
-
+                  class: "input-medium input-long" %><br>
+  <label for="email-address">Email address</label>
   <%= tag "input", type: "email",
             placeholder: "Email address",
                    name: "user[email]",
-                  class: "input-medium" %><br>
-
+                  class: "input-medium input-long" %><br>
+  <label for="email-address">Password</label>
   <%= tag "input", type: "password",
             placeholder: "Password",
                    name: "user[password]",
-                  class: "input-medium" %><br>
-
+                  class: "input-medium input-long" %><br>
+  <label for="email-address">Password Confirmation</label>
   <%= tag "input", type: "password",
             placeholder: "Password confirmation",
                    name: "user[password_confirmation]",
-                  class: "input-medium" %><br>
+                  class: "input-medium input-long" %><br>
 
-  <input type="submit" value="Sign up" class="button blue">
+  <input type="submit" value="Sign up" class="button blue input-large label-offset-button">
 </form>

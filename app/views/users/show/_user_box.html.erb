@@ -1,8 +1,7 @@
-<nav class="group user-image-box sidebar left">
+<nav class="group user-image-box sidebar left" id="user-show-sidebar">
 
-  <div><%= link_to image_tag(@user.photo, class: "user-image-medium"), @user, method: :get %></div>
+  <div><%= link_to image_tag(@user.photo, class: "user-image-medium centered", id: "user-image"), @user, method: :get %></div>
 
-  <h3><%= "#{@user.first_name}" %></h3>
-  <h2><%= "Member since: #{@user.created_at.to_date}" %></h2>
+  <h3 class="dark-gray centered" id="user-show-username"><%= "#{@user.first_name}" %></h3>
 
 </nav>

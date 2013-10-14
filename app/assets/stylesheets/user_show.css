@@ -1,0 +1,13 @@
+#user-image {
+ margin: 0 20px;
+ margin-top: 20px;
+}
+
+#user-show-sidebar {
+  border-top: 1px solid #CCC;
+  border-bottom: 1px solid #CCC;
+}
+
+#user-show-username {
+  padding-bottom: 20px;
+}

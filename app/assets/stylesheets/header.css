@@ -4,7 +4,6 @@
   display: inline;
   margin: 0 auto;
   padding: 10px;
-  font-family: 'Anaheim', sans-serif;
   font-size: 25px;
 }
 
@@ -69,8 +68,11 @@
 }
 
 #header-button {
+  padding: 7px 10px !important;
   font-size: 11px !important;
-  font-weight: bold;
+  border-radius: 4px;
+  color: rgb(60,60,60) !important;
+  background-image: -webkit-linear-gradient(top, rgb(253, 228, 76) 0%, rgb(243, 198, 19) 100%);
 }
 
 #header-search-input {
@@ -80,10 +82,14 @@
   width: 280px;
 }
 
-#sign-up-header, #log-in-header {
+#sign-up-header, #log-in-header, #username {
   color: rgb(132, 132, 132);
   font-size: 11px;
   font-weight: bold;
   padding-right: 10px;
   padding-left:  10px;
+}
+
+#header-user-image {
+  margin-top: 10px;
 }
