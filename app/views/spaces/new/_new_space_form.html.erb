@@ -1,25 +1,42 @@
 <form class="group" action="<%= spaces_url %>" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
-  <label for="space-title">Space Title</label><br>
-    <input type="text" name="space[title]" id="space-title"
-     value="<%= @space.title %>"><br>
+  <label for="space-title">Space Title</label>
+     <%= tag "input", type: "text",
+               placeholder: "Awesome Flat Near Everything!",
+                      name: "space[title]",
+                     class: "input-long",
+                        id: "space-title" %><br>
 
-  <label for="space-street-address">Street Address</label><br>
-    <input type="text" name="space[address]" id="space-street-address"
-     value="<%= @space.street_address %>"><br>
+  <label for="space-street-address">Street Address</label>
+     <%= tag "input", type: "text",
+               placeholder: "1234 Streetplace Rd.",
+                      name: "space[address]",
+                     class: "input-long",
+                        id: "space-street-address" %><br>
 
-  <label for="space-city">City</label><br>
-    <input type="text" name="space[city]" id="space-city"
-     value="<%= @space.city %>"><br>
+  <label for="space-city">City</label>
+     <%= tag "input", type: "text",
+               placeholder: "New York City, NY",
+                      name: "space[city]",
+                     class: "input-long",
+                        id: "space-city" %><br>
 
-  <label for="space-country">Country</label><br>
-    <input type="text" name="space[country]" id="space-country"
-     value="<%= @space.country %>"><br>
+  <label for="space-country">Country</label>
+     <%= tag "input", type: "text",
+               placeholder: "United States of America",
+                      name: "space[country]",
+                     class: "input-long",
+                        id: "space-country" %><br>
 
   <label for="space-description">Description</label><br>
     <textarea type="text" name="space[description]" id="space-description"
      value="<%= @space.description %>"></textarea><br>
+     <%= tag "textarea", type: "text",
+               placeholder: "United States of America",
+                      name: "space[country]",
+                     class: "input-long",
+                        id: "space-country" %><br>
 
   <label for="space-house_rules">House Rules</label><br>
     <textarea type="text" name="space[house_rules]" id="space-house_rules"
@@ -88,5 +105,5 @@
       <% end %>
     </ul><br>
 
-  <input type="submit" value="Create space">
+  <input type="submit" class="button blue input-large" value="Create space">
 </form>

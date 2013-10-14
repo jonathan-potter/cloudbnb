@@ -3,9 +3,9 @@
   <% if logged_in? %>
     <%= render "header/logged_in_dropdown" %>
   <% else %>
-    <li><%= link_to "Sign up", new_user_url, method: :get %></li>
-    <li><%= link_to "Sign in", new_session_url, method: :get %></li>
+    <li><%= link_to "SIGN UP", new_user_url, id: "sign-up-header", method: :get %></li>
+    <li><%= link_to "LOG IN", new_session_url, id: "log-in-header", method: :get %></li>
   <% end %>
-    <li><%= link_to "Create New Space", new_space_url, method: :get, class: "button yellow-orange", id: "header-button"%></li>
+    <li><%= link_to "LIST YOUR SPACE", new_space_url, method: :get, class: "button yellow-orange input-medium", id: "header-button"%></li>
     </ul>
 </nav>

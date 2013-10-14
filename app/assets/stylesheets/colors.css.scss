@@ -1,7 +1,7 @@
 /* BLUE */
 
 .blue {
-  color: white;
+  color: white !important;
   background: #1a9ce2;
 }
 
@@ -12,7 +12,7 @@
 /* YELLOW-ORANGE */
 
 .yellow-orange {
-  color: black;
+  color: black !important;
   background: #fed231;
 }
 
@@ -34,4 +34,8 @@ a:visited {
 
 .light-gray {
   color: rgb(132, 132, 132);
+}
+
+.dark-gray {
+  color: rgb(57, 60, 61);
 }

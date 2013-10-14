@@ -51,12 +51,22 @@ section {
   font-size: 13px;
 }
 
-.list-item > .price-data {
+.list-item > .price-wrapper {
+  float: right;
+}
+
+.list-item > .price-wrapper > .price-data {
   font-size: 36px;
 }
 
-.list-item > .price-data > sup {
+.list-item > .price-wrapper > .price-data > sup {
   font-size: 24px;
+}
+
+.list-item > .price-wrapper > div {
+  display: block;
+  font-size: 13px;
+  text-align: right;
 }
 
 .non-sidebar {

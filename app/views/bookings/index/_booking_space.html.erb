@@ -1,6 +1,6 @@
 <% statuses = Booking.approval_statuses %>
 
-<tr>
+<tr class="list-item">
   <td>
     <%= statuses[booking_space.approval_status] %>
   </td>
@@ -16,6 +16,9 @@
     <%= "#{booking_space.start_date} - #{booking_space.end_date}" %>
   </td>
   <td>
-    <%= button_to "Cancel", cancel_by_user_booking_url(booking_space.id), method: :put %>
+    <%= button_to "Cancel",
+                   cancel_by_user_booking_url(booking_space.id),
+                   class: "button blue input-small",
+                  method: :put %>
   </td>
 </tr>
