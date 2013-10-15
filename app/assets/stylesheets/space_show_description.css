@@ -1,3 +1,8 @@
+#description {
+  width: 400px;
+  word-wrap: break-word
+}
+
 #description, #house-rules {
   font-size: 13px;
   float: left;

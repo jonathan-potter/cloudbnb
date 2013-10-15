@@ -1,7 +1,18 @@
+
+.tab-box-wrapper  {
+  width: 682px;
+  height: 338px;
+  display: block;
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
+  background: #F8F8F8;
+  border: 1px solid #F0F0F0;
+  margin: 20px 0;
+}
+
 .tab-box {
   position: relative;
   clear: both;
-  margin: 25px 0;
 }
 
 .tab-box > .tab {
@@ -11,13 +22,16 @@
 .tab-box > .tab > label {
   background: #eee;
   padding: 10px;
-  top: -10px;
   border: 1px solid #ccc;
   margin-left: -1px;
   position: relative;
   left: 1px;
   width: 100px;
   text-align: center;
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
+  font-size: 13px;
+  font-weight: bold;
 }
 
 .tab-box > .tab > input[type=radio] {
@@ -26,7 +40,7 @@
 
 .tab-box > .tab > .tab-content {
   position: absolute;
-  top: 28px;
+  top: 36px;
   left: 0;
   background: white;
   padding: 20px;
