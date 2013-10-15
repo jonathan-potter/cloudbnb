@@ -5,9 +5,13 @@
            #{Space.room_types[@space.room_type]} -
            #{@space.city}" %></h3>
 
-  <%= render "spaces/show/photos_map_calendar" %>
+  <section class="tab-box-wrapper group">
+    <%= render "spaces/show/photos_map_calendar" %>
+  </section>
 
-  <%= render "spaces/show/description_amenities_house_rules" %>
+  <section class="tab-box-wrapper group">
+    <%= render "spaces/show/description_amenities_house_rules" %>
+  </section>
 
 </section>
 

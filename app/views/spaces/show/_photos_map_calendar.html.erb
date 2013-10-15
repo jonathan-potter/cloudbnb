@@ -1,17 +1,28 @@
 <div class="tab-box group">
 
-  <h2 id="photo-tab">photo</h2>
-  <h2 id="map-tab">map</h2>
-  <h2 id="calendar-tab">calendar</h2>
-  <section id="photo-section">
-    <%= image_tag @space.photo, class: "space-image-large"%>
+  <section class="tab" id="photo-tab">
+    <input type="radio" name="photo-map-calendar-tabs" id="photo-tab-button" checked>
+    <label for="photo-tab-button">Photo</label>
+    <%= image_tag @space.photo,
+                  class: "tab-content",
+                     id: "photo" %>
   </section>
-  <section id="map-section">
-    <%= image_tag "http://maps.google.com/maps/api/staticmap?size=300x300&sensor=false&zoom=16&markers=#{@space.latitude}%2C#{@space.longitude}",
-                  class: "space-map"%>
+
+  <section class="tab" id="map-tab">
+    <input type="radio" name="photo-map-calendar-tabs" id="map-tab-button">
+    <label for="map-tab-button">Map</label>
+    <%= image_tag "http://maps.google.com/maps/api/staticmap?size=640x260&sensor=false&zoom=16&markers=#{@space.latitude}%2C#{@space.longitude}",
+                  class: "tab-content",
+                     id: "map" %>
   </section>
-  <section id="calendar-section">
-    <%= render partial: "shared/calendar",
-               locals: {bookings: @space.booked_dates_this_month} %>
+
+  <section class="tab" id="calendar-tab">
+    <input type="radio" name="photo-map-calendar-tabs" id="calendar-tab-button">
+    <label for="calendar-tab-button">Calendar</label>
+    <div class="tab-content" id="calendar-wrapper">
+      <%= render partial: "shared/calendar",
+                 locals: {bookings: @space.booked_dates_this_month} %>
+    </div>
   </section>
+
 </div>

@@ -1,0 +1,65 @@
+#description, #house-rules {
+  font-size: 13px;
+  float: left;
+}
+
+.tab-box-wrapper  {
+  width: 684px;
+  height: 350px;
+  display: block;
+}
+
+.tab-data {
+  float: right;
+  border: 1px solid #CCC;
+  border-collapse:collapse;
+  border-radius: 10px;
+}
+
+tbody {
+}
+
+.tab-data > tr {
+}
+
+.table-row-title {
+  width: 100px;
+  font-size: 13px;
+  padding: 5px;
+}
+
+.table-row-data {
+  width: 100px;
+  font-size: 13px;
+  font-weight: bold;
+  text-align: right;
+  padding: 5px;
+}
+
+tr:nth-child(odd) {
+  background: #EEE;
+}
+
+/*tr:first-child > td {
+  border-radius: 5px;
+}
+
+tr:last-child > td {
+  border-radius: 5px;
+}*/
+
+tr:first-child > .table-row-title {
+  border-top-left-radius: 9px;
+}
+
+tr:last-child > .table-row-title {
+  border-bottom-left-radius: 9px;
+}
+
+tr:first-child > .table-row-data {
+  border-top-right-radius: 9px;
+}
+
+tr:last-child > .table-row-data {
+  border-bottom-right-radius: 9px;
+}
