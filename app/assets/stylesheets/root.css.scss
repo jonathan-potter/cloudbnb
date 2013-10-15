@@ -29,14 +29,16 @@
 }
 
 #root-page-search-bar-container > h1 {
-  font-family: shift;
   font-size: 48px;
+  text-shadow: 0px 0px 40px black;
+  -webkit-text-stroke: 0.2px #333;
 }
 
 #root-page-search-bar-container > h3 {
-  font-family: shift;
   font-size: 20px;
   padding-bottom: 15px;
+  text-shadow: 0px 0px 40px black;
+  -webkit-text-stroke: 0.2px #333;
 }
 
 #root-page-search-bar {

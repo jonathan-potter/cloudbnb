@@ -34,7 +34,7 @@ class SpacesController < ApplicationController
       space_photo.update_attributes(space_id: @space.id)
       redirect_to @space
     else
-      flash.now[:errors] << @space.errors
+      flash.now[:errors] = @space.errors if @space.errors
       render :new
     end
   end

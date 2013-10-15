@@ -1,27 +1,25 @@
 <% max = 16 %>
 <% min = 0 %>
 
-<label><%= @options[:label] %>
-  <select name="<%= @options[:html_name] %>">
+<select name="<%= @options[:html_name] %>">
 
-    <% if @options[:limits] %>
-      <% lower_limit = [@options[:limits][0], min].max  %>
-      <% upper_limit = [@options[:limits][1], max].min %>
-    <% else %>
-      <%= upper_limit = max %>
-      <%= lower_limit = min %>
-    <% end %>
+  <% if @options[:limits] %>
+    <% lower_limit = [@options[:limits][0], min].max  %>
+    <% upper_limit = [@options[:limits][1], max].min %>
+  <% else %>
+    <%= upper_limit = max %>
+    <%= lower_limit = min %>
+  <% end %>
 
-    <% (1..upper_limit).each do |number| %>
+  <% (1..upper_limit).each do |number| %>
 
-    <% if number == max %>
-      <% string = "#{max}+" %>
-    <% else %>
-      <% string = number.to_s  %>
-    <% end %>
+  <% if number == max %>
+    <% string = "#{max}+" %>
+  <% else %>
+    <% string = number.to_s  %>
+  <% end %>
 
 
-      <option value="<%= number %>"><%= string %></option>
-    <% end %>
-  </select>
-</label>
+    <option value="<%= number %>"><%= string %></option>
+  <% end %>
+</select>

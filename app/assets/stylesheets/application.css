@@ -18,7 +18,7 @@ body,h1,h2,h3,h4,h5,h6,p,img,a,ul,li,header,nav,img,main,section {
   border: 0;
   font-size: 100%;
   font: inherit;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: sans-serif;
   vertical-align: baseline;
   text-decoration: none;
   list-style-type: none;
