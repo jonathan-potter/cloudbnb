@@ -1,11 +1,17 @@
-<div class="group tab-box">
+<div class="tab-box group">
 
-  <%= image_tag @space.photo, class: "space-image-large"%>
-
-  <%= image_tag "http://maps.google.com/maps/api/staticmap?size=300x300&sensor=false&zoom=16&markers=#{@space.latitude}%2C#{@space.longitude}",
-                class: "space-map"%>
-
-  <%= render partial: "shared/calendar",
-             locals: {bookings: @space.booked_dates_this_month} %>
-
+  <h2 id="photo-tab">photo</h2>
+  <h2 id="map-tab">map</h2>
+  <h2 id="calendar-tab">calendar</h2>
+  <section id="photo-section">
+    <%= image_tag @space.photo, class: "space-image-large"%>
+  </section>
+  <section id="map-section">
+    <%= image_tag "http://maps.google.com/maps/api/staticmap?size=300x300&sensor=false&zoom=16&markers=#{@space.latitude}%2C#{@space.longitude}",
+                  class: "space-map"%>
+  </section>
+  <section id="calendar-section">
+    <%= render partial: "shared/calendar",
+               locals: {bookings: @space.booked_dates_this_month} %>
+  </section>
 </div>

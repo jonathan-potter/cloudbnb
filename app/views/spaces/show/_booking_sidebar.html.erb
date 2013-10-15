@@ -11,9 +11,8 @@
       <input type="date" name="booking[end_date]">
     </label>
 
-    <%= select_numerical_given_options(label: "Guests",
-                                   html_name: "booking[guest_count]",
-                                      limits: [1, @space.accommodates]) %>
+    <%= select_numerical_given_options(html_name: "booking[guest_count]",
+                                          limits: [1, @space.accommodates]) %>
 
     <input type="hidden" name="booking[space_id]" value="<%= @space.id %>">
 

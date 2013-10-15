@@ -1,0 +1,21 @@
+.tab-box {
+  background: gray;
+}
+
+.tab-box > h2 {
+  background: #EEE;
+  border-left: #CCC;
+  border-top: #CCC;
+  border-right: #CCC;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  float: left;
+  padding: 10px;
+  margin-left: 1px;
+  margin-right: 1px;
+  margin-top: 1px;
+}
+
+#map-section, #calendar-section {
+  display: none;
+}
