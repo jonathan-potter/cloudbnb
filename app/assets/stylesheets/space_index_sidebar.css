@@ -17,7 +17,7 @@ h4.sidebar-section-header:first-child {
   color: #333;
 }
 
-.sidebar-filters > .sidebar-section {
+.sidebar-section {
   border-right: 1px solid #CCC;
   border-left: 1px solid #CCC;
 }
@@ -44,6 +44,8 @@ h4.sidebar-section-header:first-child {
   width: 100%;
   border-bottom-right-radius: 4px;
   border-bottom-left-radius: 4px;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
   margin-top: 0;
   padding: 10px 0;
 }

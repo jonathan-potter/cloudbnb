@@ -8,12 +8,6 @@
   float: left;
 }
 
-.tab-box-wrapper  {
-  width: 684px;
-  height: 350px;
-  display: block;
-}
-
 .tab-data {
   float: right;
   border: 1px solid #CCC;

@@ -1,25 +1,42 @@
-<section class="group right-sidebar">
-  <h1>$<%= @space.booking_rate_daily %></h1>
+<section class="group sidebar right">
+
+
+  <h4 class="sidebar-section-header" id="top-of-sidebar"><%= @space.title %></h4>
+  <div class="sidebar-section group">
+    <div class="price-wrapper">
+      <div class="price-data dark-gray right">
+        <sup class="left">$</sup>
+        <%= @space.booking_rate_daily %>
+      </div>
+      <div class="light-gray">per night</div>
+    </div>
+  </div>
+
   <form action="<%= bookings_url %>" method="post">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
-    <label>Check in<br>
-      <input type="date" name="booking[start_date]">
-    </label>
 
-    <label>Check out<br>
-      <input type="date" name="booking[end_date]">
-    </label>
+    <h4 class="sidebar-section-header">Check in</h4>
+    <div class="sidebar-section group">
+        <input type="date" name="booking[start_date]" class="date-input input-small sidebar-full-width">
+    </div>
 
-    <%= select_numerical_given_options(html_name: "booking[guest_count]",
-                                          limits: [1, @space.accommodates]) %>
+    <h4 class="sidebar-section-header">Check out</h4>
+    <div class="sidebar-section group">
+        <input type="date" name="booking[end_date]" class="date-input input-small sidebar-full-width" input-small sidebar-half-width>
+    </div>
+
+    <h4 class="sidebar-section-header">Guest count</h4>
+    <div class="sidebar-section group">
+      <%= select_numerical_given_options(html_name: "booking[guest_count]",
+                                            limits: [1, @space.accommodates]) %>
+    </div>
 
     <input type="hidden" name="booking[space_id]" value="<%= @space.id %>">
 
-    <button type="submit">Book it</button>
+    <button type="submit" class="blue button" id="space-show-sidebar-book-button">Book it</button>
 
   </form>
-
   <nav>
 
     <div id="owner-img"><%= link_to image_tag(@space.owner.photo, class: "user-image-medium"), @space.owner, method: :get %></div>
