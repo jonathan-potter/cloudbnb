@@ -1,9 +1,13 @@
 <section class="group non-sidebar">
 
-  <h2><%= @space.title %></h2>
-  <h3><%= "#{Space.residence_types[@space.residence_type]} -
-           #{Space.room_types[@space.room_type]} -
-           #{@space.city}" %></h3>
+  <header id="space-show-header">
+    <h2 id="space-show-title"><%= @space.title %></h2>
+    <h3 id="space-show-info">
+      <%= "#{Space.residence_types[@space.residence_type]} -
+             #{Space.room_types[@space.room_type]} -
+             #{@space.city}" %>
+    </h3>
+  </header>
 
   <section class="tab-box-wrapper group">
     <%= render "spaces/show/photos_map_calendar" %>
