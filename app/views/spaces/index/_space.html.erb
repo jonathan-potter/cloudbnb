@@ -5,7 +5,7 @@
     <span class="map-number"><%= space_counter + 1 %></span>
   </a>
 
-  <%= link_to image_tag(space.owner_photo, class: "host-image user-image-thumb"), user_url(space.owner_id), method: :get %>
+  <%= link_to image_tag(space.owner_photo.url, class: "host-image user-image-thumb"), user_url(space.owner_id), method: :get %>
 
   <header>
     <h3>
