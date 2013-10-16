@@ -16,6 +16,9 @@
     <%= "#{booking_space.start_date} - #{booking_space.end_date}" %>
   </td>
   <td>
+    <%= link_to "Itinerary", booking_url(booking_space.id), method: :get %>
+  </td>
+  <td>
     <%= button_to "Cancel",
                    cancel_by_user_booking_url(booking_space.id),
                    class: "button blue input-small",
