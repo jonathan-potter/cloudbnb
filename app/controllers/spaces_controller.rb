@@ -10,8 +10,7 @@ class SpacesController < ApplicationController
       space_relation = Space
     end
 
-    page = params[:page] ? params[:page] : 1
-    @spaces = space_relation.page(page).per(14)
+    @spaces = space_relation.page(selected_page).per(14)
 
     @json = @spaces.to_gmaps4rails
   end

@@ -3,4 +3,5 @@ class ApplicationController < ActionController::Base
 
   include SessionsHelper
   include FlickrHelper
+  include KaminariHelper
 end

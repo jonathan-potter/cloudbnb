@@ -2,7 +2,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @spaces = @user.spaces
+
+    @spaces = @user.spaces.page(selected_page)
   end
 
   def new

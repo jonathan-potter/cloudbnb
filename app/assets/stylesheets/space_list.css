@@ -1,6 +1,30 @@
 .pagination {
   text-align: center;
+  margin: 10px;
 }
 
 .pagination > span {
+  padding: 3px 5px;
+  margin: 0 3px;
+  font-weight: bold;
+  background: #ccc;
+  text-align: center;
+  background: #1a9ce2;
+  border-radius: 3px;
+}
+
+.pagination > span:hover {
+  background: #2badf3;
+}
+
+.pagination > span > a {
+  color: white;
+}
+
+.pagination > span.current {
+  background: #fed231;
+}
+
+.pagination > span.current:hover {
+  background: #fce359;
 }
