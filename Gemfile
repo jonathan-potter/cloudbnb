@@ -14,7 +14,6 @@ group :development do
   gem 'binding_of_caller'
   gem 'debugger'
   gem 'quiet_assets'
-  gem 'launchy'
 end
 
 gem 'jquery-rails'
@@ -26,3 +25,5 @@ gem 'flickr_fu', '~> 0.3.2'
 gem 'figaro'
 gem 'faker'
 gem 'newrelic_rpm'
+gem 'launchy'
+gem 'kaminari'
