@@ -1,5 +1,7 @@
 class SpacesController < ApplicationController
 
+  before_filter :require_current_user!, only: [:new, :create]
+
   def index
     if params[:space_filters]
       @spaces = Space.find_with_filters(params[:space_filters])
