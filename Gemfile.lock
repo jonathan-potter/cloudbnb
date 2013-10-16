@@ -55,6 +55,7 @@ GEM
       debugger-ruby_core_source (~> 1.2.0)
     debugger-linecache (1.2.0)
     debugger-ruby_core_source (1.2.0)
+    diff-lcs (1.2.4)
     erubis (2.7.0)
     execjs (2.0.2)
     faker (1.2.0)
@@ -115,6 +116,17 @@ GEM
     rake (10.1.0)
     rdoc (3.12.2)
       json (~> 1.4)
+    rspec-core (2.13.1)
+    rspec-expectations (2.13.0)
+      diff-lcs (>= 1.1.3, < 2.0)
+    rspec-mocks (2.13.1)
+    rspec-rails (2.13.2)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-core (~> 2.13.0)
+      rspec-expectations (~> 2.13.0)
+      rspec-mocks (~> 2.13.0)
     sass (3.2.12)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -158,5 +170,6 @@ DEPENDENCIES
   pg
   quiet_assets
   rails (= 3.2.13)
+  rspec-rails
   sass-rails (~> 3.2.3)
   uglifier (>= 1.0.3)
