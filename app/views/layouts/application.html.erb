@@ -8,10 +8,7 @@
 </head>
 <body>
 
-  <header class="group" id="site-header">
-    <%= render "header/logo_search_bar" %>
-    <%= render "header/login_logout_banner" %>
-  </header>
+  <%= render "header/header" %>
 
   <% if flash[:errors] || flash[:notices] %>
     <div class="group" id='errors-notices'>
