@@ -4,15 +4,16 @@ class SpacesController < ApplicationController
 
   def index
 
+    space_relation = Space.includes(:owner_photo, :space_photos)
+
     if params[:space_filters]
-      space_relation  = Space.find_with_filters(params[:space_filters])
-    else
-      space_relation = Space
+      space_relation = space_relation.find_with_filters(params[:space_filters])
     end
 
     @spaces = space_relation.page(selected_page).per(14)
 
     @json = @spaces.to_gmaps4rails
+
   end
 
   def show

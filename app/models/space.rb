@@ -22,6 +22,11 @@ class Space < ActiveRecord::Base
   foreign_key: :owner_id,
   primary_key: :id
 
+  belongs_to :owner_photo,
+  class_name: "UserPhoto",
+  foreign_key: :owner_id,
+  primary_key: :user_id
+
   def self.booking_rates
     ["Daily"]
   end

@@ -5,6 +5,10 @@ class UserPhoto < ActiveRecord::Base
   validates_uniqueness_of :url, :flickr_id
 
   belongs_to :user
+  has_many :spaces,
+  class_name: "Space",
+  foreign_key: :owner_id,
+  primary_key: :user_id
 
   def self.unattached_photo
     UserPhoto.where("user_id IS NULL").sample
