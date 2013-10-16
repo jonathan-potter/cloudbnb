@@ -1,14 +1,20 @@
-<%= render "bookings/shared/itinerary" %>
+<div class="group" id="itinerary">
 
-<section>
-  <p>
-    If this website were real, this is where I would ask you to put in your payment information.
-  </p>
-</section>
+  <h1 class="page-header">Your Trip</h1>
 
-<form action="<%= book_booking_url(@booking.id) %>" method="POST">
-  <input type="hidden" name="_method" value="put">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <%= render "bookings/shared/itinerary" %>
 
-  <p><input type="submit" value="Book for Free"></p>
-</form>
+  <section>
+    <p class="group" id="disclaimer">
+      If this website were real, this is where I would ask you to put in your payment information.
+    </p>
+  </section>
+
+  <form action="<%= book_booking_url(@booking.id) %>" method="POST">
+    <input type="hidden" name="_method" value="put">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+    <p><input type="submit" class="blue button input-large" value="Book for Free"></p>
+  </form>
+
+</div>

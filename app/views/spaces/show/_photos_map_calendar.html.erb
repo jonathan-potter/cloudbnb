@@ -1,7 +1,7 @@
 <div class="tab-box group">
 
   <section class="tab" id="photo-tab">
-    <input type="radio" name="photo-map-calendar-tabs" id="photo-tab-button" checked>
+    <input type="radio" name="photo-map-calendar-tabs" id="photo-tab-button">
     <label for="photo-tab-button">Photo</label>
     <%= image_tag @space.photo,
                   class: "tab-content",
@@ -9,7 +9,7 @@
   </section>
 
   <section class="tab" id="map-tab">
-    <input type="radio" name="photo-map-calendar-tabs" id="map-tab-button">
+    <input type="radio" name="photo-map-calendar-tabs" id="map-tab-button" checked>
     <label for="map-tab-button">Map</label>
     <%= image_tag "http://maps.google.com/maps/api/staticmap?size=640x260&sensor=false&zoom=16&markers=#{@space.latitude}%2C#{@space.longitude}",
                   class: "tab-content",

@@ -39,14 +39,6 @@ tr:nth-child(odd) {
   background: #EEE;
 }
 
-/*tr:first-child > td {
-  border-radius: 5px;
-}
-
-tr:last-child > td {
-  border-radius: 5px;
-}*/
-
 tr:first-child > .table-row-title {
   border-top-left-radius: 9px;
 }

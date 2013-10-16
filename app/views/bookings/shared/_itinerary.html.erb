@@ -1,64 +1,64 @@
-<header class="group">
-  <h1>The Listing</h1>
-  <%= link_to image_tag(@space.photo, class: "space-image space-image-small"), @space, method: :get %>
-  <h2><%= @space.title %></h2>
-  <div>
-    <div>
-      <%= @space.address %>
-    </div>
-    <ul>
-      <li><%= Space.residence_types[@space.residence_type] %></li>
-      <li><%= Space.room_types[@space.room_type] %></li>
-      <li><%= Space.bed_types[@space.bed_type] %></li>
-    </ul>
-  </div>
-</header>
+<div class="group">
+  <header class="group" id="itinerary-header">
+    <%= link_to image_tag(@space.photo, class: "image-medium"), @space, method: :get %>
+  </header>
 
-<% # All of this will need to be moved out of here at some point %>
-<% night_count = distance_of_time_in_words(@booking.start_date, @booking.end_date).split(" ")[0].to_i %>
-<% subtotal = @space.booking_rate_daily * night_count %>
-<% service_fee = subtotal * 0.10 %>
-<% total = subtotal + service_fee %>
+  <% # All of this will need to be moved out of here at some point %>
+  <% # for obvious mvc reasons %>
+  <% night_count = distance_of_time_in_words(@booking.start_date, @booking.end_date).split(" ")[0].to_i %>
+  <% subtotal = @space.booking_rate_daily * night_count %>
+  <% service_fee = subtotal * 0.10 %>
+  <% total = subtotal + service_fee %>
 
-<section>
-  <h3>Your Trip</h3>
-  <table>
-    <tr>
-      <td>Check in</td>
-      <td><%= @booking.start_date %></td>
-    </tr>
-    <tr>
-      <td>Check out</td>
-      <td><%= @booking.end_date %></td>
-    </tr>
-    <tr>
-      <td>Nights</td>
-      <td><%= night_count %></td>
-    </tr>
-    <tr>
-      <td>Guests</td>
-      <td><%= @booking.guest_count %></td>
-    </tr>
-  </table>
-</section>
-
-<section>
-  <table>
-    <tr>
-      <td>Booking Rate</td>
-      <td>$<%= @space.booking_rate_daily %></td>
-    </tr>
-    <tr>
-      <td>Subtotal</td>
-      <td>$<%= subtotal %></td>
-    </tr>
-    <tr>
-      <td>Service Fee</td>
-      <td>$<%= service_fee %></td>
-    </tr>
-    <tr>
-      <td>Total</td>
-      <td>$<%= total %></td>
-    </tr>
-  </table>
-</section>
+  <section>
+    <table id="itinerary-table">
+      <tr>
+        <td colspan="2"><%= @space.title %></td>
+      </tr>
+      <tr>
+        <td>Residence type</td>
+        <td><%= Space.residence_types[@space.residence_type] %></td>
+      </tr>
+      <tr>
+        <td>Room type</td>
+        <td><%= Space.room_types[@space.room_type] %></td>
+      </tr>
+      <tr>
+        <td>Bed type</td>
+        <td><%= Space.bed_types[@space.bed_type] %></td>
+      </tr>
+      <tr>
+        <td>Check in</td>
+        <td><%= @booking.start_date %></td>
+      </tr>
+      <tr>
+        <td>Check out</td>
+        <td><%= @booking.end_date %></td>
+      </tr>
+      <tr>
+        <td>Nights</td>
+        <td><%= night_count %></td>
+      </tr>
+      <tr>
+        <td>Guests</td>
+        <td><%= @booking.guest_count %></td>
+      </tr>
+      <tr>
+        <td>Booking Rate</td>
+        <td>$<%= @space.booking_rate_daily %></td>
+      </tr>
+      <tr>
+        <td>Subtotal</td>
+        <td>$<%= subtotal %></td>
+      </tr>
+      <tr>
+        <td>Service Fee</td>
+        <td>$<%= service_fee %></td>
+      </tr>
+      <tr>
+        <td>Total</td>
+        <td>$<%= total %></td>
+      </tr>
+    </table>
+  </section>
+</div>

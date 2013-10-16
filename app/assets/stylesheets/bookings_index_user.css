@@ -1,0 +1,21 @@
+.page-header {
+  font-size: 40px;
+  font-weight: bold;
+  color: #CCC;
+  margin: auto;
+  display: block;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+#user-bookings-table {
+  margin: auto;
+  border: 1px solid #CCC;
+  border-collapse:collapse;
+  border-radius: 10px;
+}
+
+#user-bookings-table > tbody > tr > td {
+  text-align: center;
+  padding: 3px;
+}
