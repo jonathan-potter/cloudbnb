@@ -8,8 +8,6 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-
-    render :new
   end
 
   def create
@@ -23,7 +21,7 @@ class UsersController < ApplicationController
       user_photo = UserPhoto.unattached_photo
       user_photo.update_attributes(user_id: @user.id)
       login_user!(@user)
-      redirect_to @user
+      redirect_to spaces_url
     else
       flash.now[:errors] = @user.errors
       render :new

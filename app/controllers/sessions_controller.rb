@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
 
   def new
-    render :new
+    @user = User.new
   end
 
   def create
@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       @user = User.find_by_lowercase_email(params[:user][:email])
     end
 
-    if @user && @user.authenticate(params[:user][:password])
+    if @user.is_a?(User) && @user.authenticate(params[:user][:password])
       login_user!(@user)
       redirect_to @user, :notices => "Welcome back, #{@user.first_name}"
     else

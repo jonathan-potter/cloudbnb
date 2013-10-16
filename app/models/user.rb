@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
   end
 
   def self.find_by_lowercase_email(email)
-    User.where('lower(email) = ?', email.downcase)
+    User.where('lower(email) = ?', email.downcase).first
   end
 
   def reset_session_token!

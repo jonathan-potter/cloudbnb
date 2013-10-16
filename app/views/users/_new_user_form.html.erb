@@ -5,17 +5,20 @@
   <%= tag "input", type: "input",
             placeholder: "First name",
                    name: "user[first_name]",
-                  class: "input-medium input-long" %><br>
+                  class: "input-medium input-long",
+                  value: @user.first_name %><br>
   <label for="email-address">Last name</label>
   <%= tag "input", type: "input",
             placeholder: "Last name",
                    name: "user[last_name]",
-                  class: "input-medium input-long" %><br>
+                  class: "input-medium input-long",
+                  value: @user.last_name %><br>
   <label for="email-address">Email address</label>
   <%= tag "input", type: "email",
             placeholder: "Email address",
                    name: "user[email]",
-                  class: "input-medium input-long" %><br>
+                  class: "input-medium input-long",
+                  value: @user.email %><br>
   <label for="email-address">Password</label>
   <%= tag "input", type: "password",
             placeholder: "Password",
