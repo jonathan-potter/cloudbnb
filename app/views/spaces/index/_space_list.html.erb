@@ -1,3 +1,4 @@
 <ul class="group" id="spaces-index-list">
   <%= render partial:"spaces/index/space", collection: @spaces %>
+  <li><%= paginate @spaces %></li>
 </ul>
