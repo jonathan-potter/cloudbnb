@@ -1,0 +1,10 @@
+<div class="bannable_photos left">
+  <% if photo.space_id == -1 %>
+    <%= image_tag(photo.url_small, class: "space-image-medium banned") %>
+  <% else %>
+    <%= image_tag(photo.url_small, class: "space-image-medium not-banned") %>
+  <% end %>
+
+  <%= button_to "Ban",   ban_space_photo_url(photo.id), class: "button blue input-small", method: :put %>
+  <%= button_to "unBan", unban_space_photo_url(photo.id), class: "button blue input-small", method: :put %>
+</div>

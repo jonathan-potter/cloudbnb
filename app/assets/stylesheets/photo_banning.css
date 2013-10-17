@@ -1,0 +1,11 @@
+.banned {
+  border: 5px solid red;
+  padding: 0;
+  margin: 5px;
+}
+
+.not-banned {
+  border: 5px solid blue;
+  padding: 0;
+  margin: 5px;
+}

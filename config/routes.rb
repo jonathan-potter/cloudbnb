@@ -20,4 +20,18 @@ AirbnbClone::Application.routes.draw do
     end
   end
 
+  resources :user_photos, only: [:index] do
+    member do
+      put "ban"
+      put "unban"
+    end
+  end
+
+  resources :space_photos, only: [:index] do
+    member do
+      put "ban"
+      put "unban"
+    end
+  end
+
 end
