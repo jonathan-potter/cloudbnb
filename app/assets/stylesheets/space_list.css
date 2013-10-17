@@ -4,7 +4,9 @@
 }
 
 .pagination > span {
-  padding: 3px 5px;
+  display: inline-block;
+  height: 18px;
+  padding: 3px 0px;
   margin: 0 3px;
   font-weight: bold;
   background: #ccc;
@@ -18,11 +20,13 @@
 }
 
 .pagination > span > a {
+  padding: 3px 10px;
   color: white;
 }
 
 .pagination > span.current {
   background: #fed231;
+  padding: 3px 10px;
 }
 
 .pagination > span.current:hover {
