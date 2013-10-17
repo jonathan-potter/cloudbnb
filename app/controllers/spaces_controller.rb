@@ -12,8 +12,6 @@ class SpacesController < ApplicationController
 
     @spaces = space_relation.page(selected_page).per(14)
 
-    @json = @spaces.to_gmaps4rails
-
     if request.xhr?
       render partial: "spaces/index/space_list", locals: {spaces: @spaces}
     else

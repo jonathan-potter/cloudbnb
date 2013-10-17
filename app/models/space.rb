@@ -6,7 +6,6 @@ class Space < ActiveRecord::Base
   :longitude, :amenities_indicies, :booking_rate_indicies, :photo_url
 
   geocoded_by :address
-  acts_as_gmappable process_geocoding: false
 
   validates_presence_of :owner_id, :title, :residence_type,
   :bedroom_count, :bathroom_count, :room_type, :bed_type, :accommodates,
