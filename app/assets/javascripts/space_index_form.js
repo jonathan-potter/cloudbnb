@@ -8,6 +8,7 @@ $(document).ready(function() {
 
   $("#space-index-filter-form").on("ajax:success", function(event, data){
     $("#space-list-wrapper").html(data);
+    initializeMap();
   });
 
 });

@@ -1,6 +1,11 @@
 <ul class="group" id="spaces-index-list">
 
   <% @spaces ||= spaces %>
+
+  <script type="application/json" id="bootstrap">
+    <%= @spaces.to_json.html_safe %>
+  </script>
+
   <%= render partial:"spaces/index/space", collection: @spaces %>
   <li><%= paginate @spaces %></li>
 
