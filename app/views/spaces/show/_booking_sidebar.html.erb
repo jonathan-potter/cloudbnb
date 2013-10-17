@@ -42,7 +42,7 @@
 
     <h4 class="sidebar-section-header" id="top-of-booking-sidebar">The Host</h4>
     <div class="sidebar-section group">
-      <div id="owner-img"><%= link_to image_tag(@space.owner.photo, class: "user-image-medium"), @space.owner, method: :get %></div>
+      <div id="owner-img"><%= link_to image_tag(@space.owner.photo_medium, class: "user-image-medium"), @space.owner, method: :get %></div>
 
       <h3 id="space-show-owner-name"><%= "#{@space.owner.first_name}" %></h3>
     </div>
