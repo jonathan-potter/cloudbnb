@@ -2,7 +2,10 @@
   <%= gmaps4rails @json %>
 </div>
 
-<form class="sidebar-filters">
+<form class="sidebar-filters"
+data-remote="true"
+         id="space-index-filter-form">
+
   <h4 class="sidebar-section-header">Room Type</h4>
     <div class="sidebar-section group">
       <%= checkbox_group collection: Space.room_types,

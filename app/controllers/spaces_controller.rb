@@ -14,6 +14,12 @@ class SpacesController < ApplicationController
 
     @json = @spaces.to_gmaps4rails
 
+    if request.xhr?
+      render partial: "spaces/index/space_list", locals: {spaces: @spaces}
+    else
+      render :index
+    end
+
   end
 
   def show
