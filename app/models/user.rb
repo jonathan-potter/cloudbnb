@@ -41,6 +41,18 @@ class User < ActiveRecord::Base
     photo ? photo.url : "http://placekitten.com/g/400/400"
   end
 
+  def photo_small
+    # self.photo_url || "http://placekitten.com/g/400/400"
+    photo = self.user_photos.sample
+    photo ? photo.url_small : "http://placekitten.com/g/400/400"
+  end
+
+  def photo_medium
+    # self.photo_url || "http://placekitten.com/g/400/400"
+    photo = self.user_photos.sample
+    photo ? photo.url_medium : "http://placekitten.com/g/400/400"
+  end
+
   private
 
   def ensure_session_token

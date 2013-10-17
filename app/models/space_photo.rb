@@ -10,4 +10,12 @@ class SpacePhoto < ActiveRecord::Base
     SpacePhoto.where("space_id IS NULL").sample
   end
 
+  def url_small
+    self.url[0..-5] + "_s" + self.url[-4..-1]
+  end
+
+  def url_medium
+    self.url[0..-5] + "_m" + self.url[-4..-1]
+  end
+
 end

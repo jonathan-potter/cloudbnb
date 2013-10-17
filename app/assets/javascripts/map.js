@@ -1,21 +1,30 @@
-var initialize = function() {
+var initializeMap = function() {
+
+  var spaces = JSON.parse($("#bootstrap").html());
+  var maxLat, minLat, maxLon, minLon;
+
+  spaces.forEach(function(space) {
+
+    if (!maxLat || maxLat < space["latitude"])  { maxLat = space["latitude"]};
+    if (!minLat || minLat < space["latitude"])  { minLat = space["latitude"]};
+    if (!maxLon || maxLon < space["longitude"]) { maxLon = space["longitude"]};
+    if (!minLon || minLon < space["longitude"]) { minLon = space["longitude"]};
+
+  });
+
+  var centerLat = (maxLat + minLat) / 2;
+  var centerLon = (maxLon + minLon) / 2;
 
   var mapOptions = {
     zoom: 9,
-    center: new google.maps.LatLng(40.7577, -73.9857),
-    mapTypeId: google.maps.MapTypeId.TERRAIN
+    center: new google.maps.LatLng(centerLat, centerLon),
+    mapTypeId: google.maps.MapTypeId.MAP
   };
 
   var map = new google.maps.Map(document.getElementById("map-canvas"),
       mapOptions);
   var bounds = new google.maps.LatLngBounds();
 
-  var spaces = JSON.parse($("#bootstrap").html());
-  globalThing = spaces;
-  spaces.forEach(function(space) {
-    createMarker(space["latitude"], space["longitude"],
-    space["title"], space["address"])
-  });
 
   function createMarker(lat, long, title, addy, completed) {
 
@@ -37,12 +46,12 @@ var initialize = function() {
       this.getMap()._infoWindow.setContent(contentString);
       this.getMap()._infoWindow.open(this.getMap(), this);
     });
-
   };
+
+  spaces.forEach(function(space) {
+
+    createMarker(space["latitude"], space["longitude"],
+    space["title"], space["address"]);
+
+  });
 };
-
-$(document).ready(function() {
-
-  google.maps.event.addDomListener(window, 'load', initialize);
-
-});

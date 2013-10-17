@@ -1,11 +1,11 @@
 <li class="group list-item">
 
   <a href=<%= space_url(space.id) %> class="space-image-wrapper">
-    <%= image_tag(space.photo, class: "space-image space-image-small") %>
+    <%= image_tag(space.photo_medium, class: "space-image space-image-small") %>
     <span class="map-number"><%= space_counter + 1 %></span>
   </a>
 
-  <%= link_to image_tag(space.owner_photo.url, class: "host-image user-image-thumb"), user_url(space.owner_id), method: :get %>
+  <%= link_to image_tag(space.owner_photo.url_small, class: "host-image user-image-thumb"), user_url(space.owner_id), method: :get %>
 
   <header>
     <h3>

@@ -218,4 +218,16 @@ class Space < ActiveRecord::Base
     photo ? photo.url : "http://placekitten.com/g/117/77"
   end
 
+  def photo_small
+    # self.photo_url || "http://placekitten.com/g/117/77"
+    photo = self.space_photos.sample
+    photo ? photo.url_small : "http://placekitten.com/g/117/77"
+  end
+
+  def photo_medium
+    # self.photo_url || "http://placekitten.com/g/117/77"
+    photo = self.space_photos.sample
+    photo ? photo.url_medium : "http://placekitten.com/g/117/77"
+  end
+
 end
