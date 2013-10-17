@@ -46,13 +46,6 @@ GEM
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
     coderay (1.0.9)
-    coffee-rails (3.2.2)
-      coffee-script (>= 2.2.0)
-      railties (~> 3.2.0)
-    coffee-script (2.2.0)
-      coffee-script-source
-      execjs
-    coffee-script-source (1.6.3)
     columnize (0.3.6)
     debug_inspector (0.0.2)
     debugger (1.5.0)
@@ -167,7 +160,6 @@ DEPENDENCIES
   binding_of_caller
   calendar_helper
   capybara
-  coffee-rails (~> 3.2.1)
   debugger
   faker
   figaro
