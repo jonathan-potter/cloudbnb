@@ -1,0 +1,59 @@
+<section class="global-map group">
+  <div id="map-canvas"></div>
+</section>
+
+<script type="text/javascript"
+  src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_API_KEY'] %>&sensor=false">
+</script>
+
+<script type="text/javascript">
+  function initialize() {
+
+    var mapOptions = {
+      zoom: 10,
+      center: new google.maps.LatLng(40.7577, -73.9857),
+      mapTypeId: google.maps.MapTypeId.TERRAIN
+    };
+
+    var map = new google.maps.Map(document.getElementById("map-canvas"),
+        mapOptions);
+    var bounds = new google.maps.LatLngBounds();
+
+    <% @spaces.each do |space| %>
+      createMarker(<%= space.latitude %>, <%= space.longitude %>,
+        "<%= space.title %>", "<%= space.address %>")
+        bounds.extend(new google.maps.LatLng(<%= space.latitude %>, <%= space.longitude %>))
+    <% end %>
+
+    function createMarker(lat, long, title, addy, completed) {
+
+      var marker = new google.maps.Marker({
+        position: new google.maps.LatLng(lat, long),
+        map: map,
+        title: title
+        // icon: redMarker
+        // icon: completed ? greenMarker : redMarker
+      });
+
+      google.maps.event.addListener(marker, 'click', function() {
+        var contentString =
+          '<div id="info"><h1>'+title+'</h1><p>'+addy+'</p></div>'
+
+        if (!this.getMap()._infoWindow){
+          this.getMap()._infoWindow = new google.maps.InfoWindow();
+        }
+        this.getMap()._infoWindow.close();
+        this.getMap()._infoWindow.setContent(contentString);
+        this.getMap()._infoWindow.open(this.getMap(), this);
+      });
+
+    };
+  }
+
+  google.maps.event.addDomListener(window, 'load', initialize);
+
+</script>
+
+<div>
+
+</div>

@@ -1,0 +1,9 @@
+
+#map-canvas {
+  width: 200px;
+  height: 200px;
+  padding: 3px;
+  border: 1px solid #ccc;
+  border-radius: 3;
+  margin: auto;
+}
