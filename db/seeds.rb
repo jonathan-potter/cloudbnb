@@ -9,14 +9,14 @@
 
 ######################### Grab Photos From Flickr ##############################
 
-user_photo_limit = 100
-space_photo_limit = 100
+user_photo_limit = ENV["SEED_PHOTO_LIMIT"].to_i
+space_photo_limit = ENV["SEED_PHOTO_LIMIT"].to_i
 
 flickr = Flickr.new(key: ENV["FLICKR_KEY"], secret: ENV["FLICKR_SECRET"])
 
-if UserPhoto.all.length < user_photo_limit
+if UserPhoto.all.length.to_i < user_photo_limit.to_i
 
-  flickr_user_photos = flickr.photos.search("tags" => "selfie")
+  flickr_user_photos = flickr.photos.search("tags" => ENV["SEED_USER_SEARCH_TERM"])
   puts "FLICKR_USER_PHOTOS: #{flickr_user_photos.length}"
 
 else
@@ -26,9 +26,9 @@ else
 
 end
 
-if SpacePhoto.all.length < user_photo_limit
+if SpacePhoto.all.length.to_i < space_photo_limit.to_i
 
-  flickr_space_photos = flickr.photos.search("tags" => "beach house")
+  flickr_space_photos = flickr.photos.search("tags" => ENV["SEED_SPACE_SEARCH_TERM"])
   puts "FLICKR_SPACE_PHOTOS: #{flickr_space_photos.length}"
 
 else
@@ -62,10 +62,10 @@ end
 
 ######################### Seed Database with Users #############################
 
-user_limit = 50
-space_limit = 50
+user_limit = ENV["SEED_USER_LIMIT"].to_i
+space_limit = ENV["SEED_SPACE_LIMIT"].to_i
 
-if User.all.length < user_limit
+if User.all.length < user_limit.to_i
 
   user_count = User.all.length
   (user_limit - user_count).times do |user_index|
@@ -83,7 +83,7 @@ if User.all.length < user_limit
 
 end
 
-if Space.all.length < space_limit
+if Space.all.length < space_limit.to_i
 
   space_count = Space.all.length
   (space_limit - space_count).times do |user_index|
@@ -104,9 +104,9 @@ if Space.all.length < space_limit
     space_hash[:amenities]             = rand(2 ** Space.amenities_list.length)
     space_hash[:description]           = Faker::Company.catch_phrase
     space_hash[:house_rules]           = Faker::Company.catch_phrase
-    space_hash[:address]               = "#{rand(125).ordinalize} and #{rand(10).ordinalize}"
-    space_hash[:city]                  = "NYC"
-    space_hash[:country]               = "USA"
+    space_hash[:address]               = "#{(rand(125) + 1).ordinalize} and #{(rand(10) + 1).ordinalize}"
+    space_hash[:city]                  = ENV["SEED_CITY"]
+    space_hash[:country]               = ENV["SEED_COUNTRY"]
 
     Space.create(space_hash)
     sleep(0.25)
