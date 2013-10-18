@@ -12,19 +12,8 @@
                       class: "text-input input-large",
                          id: "root-input-city-name" %>
 
-      <%= tag "input", type: "date",
-                      value: "",
-                placeholder: "Check in",
-                       name: "space_filters[start_date]",
-                      class: "date-input input-large" %>
-
-      <%= tag "input", type: "date",
-                      value: "",
-                placeholder: "Check out",
-                       name: "space_filters[end_date]",
-                      class: "date-input input-large" %>
-
-      <%= select_numerical_given_options(html_name: "space_filters[guest_count]") %>
+      <%= select_numerical_given_options(html_name: "space_filters[guest_count]",
+                                       plural_noun: "guests") %>
 
       <input type="submit" value="Search" class="button blue input-large" id="search-button">
 

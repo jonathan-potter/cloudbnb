@@ -19,7 +19,10 @@
     <% string = number.to_s  %>
   <% end %>
 
-
-    <option value="<%= number %>"><%= string %></option>
+    <% if number == 1 %>
+      <option value="<%= number %>"><%= "#{string} #{@options[:plural_noun].singularize}" %></option>
+    <% else %>
+      <option value="<%= number %>"><%= "#{string} #{@options[:plural_noun]}" %></option>
+    <% end %>
   <% end %>
 </select>

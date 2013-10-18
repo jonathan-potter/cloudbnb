@@ -29,7 +29,8 @@
     <h4 class="sidebar-section-header">Guest count</h4>
     <div class="sidebar-section group">
       <%= select_numerical_given_options(html_name: "booking[guest_count]",
-                                            limits: [1, @space.accommodates]) %>
+                                            limits: [1, @space.accommodates],
+                                       plural_noun: "guests") %>
     </div>
 
     <input type="hidden" name="booking[space_id]" value="<%= @space.id %>">
