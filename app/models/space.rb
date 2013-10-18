@@ -143,7 +143,7 @@ class Space < ActiveRecord::Base
   end
 
   def self.random_space_with_photo
-    SpacePhoto.where("space_id IS NOT NULL").sample
+    SpacePhoto.where("space_id > 0").sample
   end
 
   def set_amenities_from_options_list!(options_list)
