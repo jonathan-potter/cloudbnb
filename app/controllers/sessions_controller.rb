@@ -26,7 +26,7 @@ class SessionsController < ApplicationController
   end
 
   def guest_user_sign_in
-    @user = User.find_by_first_name("Guest")
+    @user = User.find(:first, conditions: ["lower(first_name) = ?","guest"])
     login_user!(@user)
     redirect_to spaces_url
   end
