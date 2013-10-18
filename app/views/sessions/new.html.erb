@@ -18,7 +18,12 @@
                       class: "input-medium input-long",
                          id: "password" %><br>
 
-    <%= tag "input", type: "submit",
-                    value: "Sign in",
-                    class: "button blue input-large label-offset-button" %>
+      <%= tag "input", type: "submit",
+                      value: "Sign in",
+                      class: "button blue input-large label-offset-button" %>
 </form>
+
+<%= button_to "Sign in guest", guest_user_sign_in_session_url,
+                      method: :put,
+                       class: "button blue input-large label-offset-button",
+                          id: "guest-user-button" %>

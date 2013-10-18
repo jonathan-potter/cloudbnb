@@ -4,7 +4,11 @@ AirbnbClone::Application.routes.draw do
 
   resources :users,    only: [:new, :create, :show]
 
-  resource  :session,  only: [:new, :create, :destroy]
+  resource  :session,  only: [:new, :create, :destroy] do
+    member do
+      put "guest_user_sign_in"
+    end
+  end
 
   resources :spaces,   only: [:new, :create, :show, :index] do
     resources :bookings, only: [:edit, :index]

@@ -25,4 +25,10 @@ class SessionsController < ApplicationController
     redirect_to root_url, notices: "Logged out."
   end
 
+  def guest_user_sign_in
+    @user = User.find_by_first_name("Guest")
+    login_user!(@user)
+    redirect_to spaces_url
+  end
+
 end
