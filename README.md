@@ -5,11 +5,11 @@ SUMMARY:
 --------
 [Cloudbnb](http://cloudbnb.herokuapp.com/) is a faithful Airbnb clone. Backed by Rails, it replicates many of the core user-facing features of Airbnb.
 
-###Search for places to stay with multiple filters
+###Search for Places to Stay with Multiple Filters
  * Filter location by location, room type, price range, guest count, available dates, amenities.
  * View pictures, maps, calendar, description, amenities, and house rules for every location.
 
-###Book vacations
+###Book Vacations
  * Request a booking by date range and number of guests.
  * Cancel a booking if necessary.
  * View the status of all bookings
@@ -20,18 +20,28 @@ SUMMARY:
 
 ##Technologies Used
 The following technologies were used to build Cloudbnb:
-* AJAX
-* Capybara
-* CSS
-* Figaro
-* Heroku
-* HTML5
-* JavaScript
-* JQuery
-* Kaminari
-* RSpec
-* Ruby on Rails
-* SQL
+
+ * AJAX
+ * Capybara
+ * CSS
+ * Faker
+ * Figaro
+ * Flickr-fu
+ * Geocoder
+ * Heroku
+ * HTML5
+ * JavaScript
+ * JQuery
+ * Kaminari
+ * NewRelic
+ * Postgresql
+ * RSpec
+ * Ruby on Rails
+ * SQL
+
+###External APIs Consumed
+ * Google Maps
+ * Flickr
 
 ##Comments? Suggestions?
-Cloudbnb is a work in progress. Please feel free to send me an email at jonathan.potter.business@gmail.com with any comments or suggestions about how I can improve the site.
+Please feel free to send me an email at Jonathan.potter.business@gmail.com with any comments or suggestions about how I can improve the site.
