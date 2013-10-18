@@ -90,7 +90,7 @@ class Space < ActiveRecord::Base
 
   def self.find_with_filters(filters)
 
-    filtered_spaces = Space.includes(:bookings)
+    filtered_spaces = Space
 
     if filters[:city] && filters[:city].length > 0
       filtered_spaces = filtered_spaces.near(filters[:city],10)
@@ -127,25 +127,19 @@ class Space < ActiveRecord::Base
         end_date =   Date.parse(filters[:end_date])
         if start_date.is_a?(Date) && end_date.is_a?(Date)
 
-          # filtered_spaces = filtered_spaces.select do |space|
-          #   space.bookings
-          #   .where("? <= end_date AND ? >= start_date", start_date, end_date)
-          #   .where("approval_status = ?", Booking.approval_statuses[:approved])
-          #   .empty?
-          # end
-
-          filtered_spaces = filtered_spaces.select do |space|
-            space.bookings.none? do |booking|
-              booking.approval_status == Booking.approval_statuses[:approved] &&
-              booking.conflicts_with_dates?(start_date, end_date)
-            end
-          end
+          filtered_spaces = filtered_spaces
+          .where(<<-SQL, start_date, end_date, Booking.approval_statuses[:approved])
+          spaces.id NOT IN
+          (SELECT bookings.space_id
+             FROM bookings
+            WHERE ? <= end_date AND ? >= start_date AND approval_status = ?)
+          SQL
 
         end
       end
     end
 
-    filtered_spaces == Space ? Space.all : filtered_spaces
+    filtered_spaces
   end
 
   def self.random_space_with_photo
