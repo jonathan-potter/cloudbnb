@@ -19,9 +19,9 @@
   <% end %>
 
   <% unless params[:controller] == "root" %>
-    <main class="group">
+    <div class="main group">
       <%= yield %>
-    </main>
+    </div>
   <% else %>
       <%= yield %>
   <% end %>

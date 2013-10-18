@@ -40,9 +40,9 @@ body {
   text-align: center;
 }
 
-main {
+.main {
   background: white;
-  width: 1000px;
+  width: 1000px !important;
   margin: 20px auto;
   min-width: 1000px;
   border-radius: 30px;
