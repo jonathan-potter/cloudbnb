@@ -28,6 +28,8 @@ class Booking < ActiveRecord::Base
                    2 => "approved"}
   end
 
+  ############# BOOKING COST CALCULATIONS ###################################
+
   def night_count
     (self.end_date - self.start_date).to_i
   end

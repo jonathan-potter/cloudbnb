@@ -38,19 +38,19 @@
       </tr>
       <tr>
         <td>Booking Rate</td>
-        <td>$<%= @space.booking_rate_daily %></td>
+        <td>$<%= monetize(@space.booking_rate_daily) %></td>
       </tr>
       <tr>
         <td>Subtotal</td>
-        <td>$<%= @booking.subtotal %></td>
+        <td>$<%= monetize(@booking.subtotal) %></td>
       </tr>
       <tr>
         <td>Service Fee</td>
-        <td>$<%= @booking.service_fee %></td>
+        <td>$<%= monetize(@booking.service_fee) %></td>
       </tr>
       <tr>
         <td>Total</td>
-        <td>$<%= @booking.total %></td>
+        <td>$<%= monetize(@booking.total) %></td>
       </tr>
     </table>
   </section>
