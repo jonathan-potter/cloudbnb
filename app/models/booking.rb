@@ -28,16 +28,26 @@ class Booking < ActiveRecord::Base
                    2 => "approved"}
   end
 
+  def night_count
+    (self.end_date - self.start_date).to_i
+  end
+
+  def subtotal
+    self.booking_rate_daily * self.night_count
+  end
+
+  def service_fee
+    self.subtotal * 0.10
+  end
+
+  def total
+    self.subtotal + self.service_fee
+  end
+
+  ############# VALIDATING BOOKING PARAMETERS ###############################
+
   def guest_count_valid?
     self.guest_count < self.space.accommodates
-  end
-
-  def update_approval_status(method)
-    self.public_send(method)
-  end
-
-  def has_initial_form_attributes
-    self.start_date && self.end_date && self.guest_count
   end
 
   def conflicts_with_date?(date)
@@ -48,8 +58,8 @@ class Booking < ActiveRecord::Base
     self.start_date < end_date && self.end_date > start_date
   end
 
-  def set_approval_status(status)
-    self.update_attributes!(approval_status: status)
+  def has_initial_form_attributes
+    self.start_date && self.end_date && self.guest_count
   end
 
   def overlapping_requests(status)
@@ -63,6 +73,16 @@ class Booking < ActiveRecord::Base
 
   def is_free_of_conflicts?
     overlapping_requests(:approved).empty?
+  end
+
+  ############# UPDATING BOOKING PARAMETERS #################################
+
+  def update_approval_status(method)
+    self.public_send(method)
+  end
+
+  def set_approval_status(status)
+    self.update_attributes!(approval_status: status)
   end
 
   def decline_conflicting_pending_requests!

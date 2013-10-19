@@ -3,13 +3,6 @@
     <%= link_to image_tag(@space.photo_medium, class: "image-medium"), @space, method: :get %>
   </header>
 
-  <% # All of this will need to be moved out of here at some point %>
-  <% # for obvious mvc reasons %>
-  <% night_count = distance_of_time_in_words(@booking.start_date, @booking.end_date).split(" ")[0].to_i %>
-  <% subtotal = @space.booking_rate_daily * night_count %>
-  <% service_fee = subtotal * 0.10 %>
-  <% total = subtotal + service_fee %>
-
   <section>
     <table id="itinerary-table">
       <tr>
@@ -37,7 +30,7 @@
       </tr>
       <tr>
         <td>Nights</td>
-        <td><%= night_count %></td>
+        <td><%= @booking.night_count %></td>
       </tr>
       <tr>
         <td>Guests</td>
@@ -49,15 +42,15 @@
       </tr>
       <tr>
         <td>Subtotal</td>
-        <td>$<%= subtotal %></td>
+        <td>$<%= @booking.subtotal %></td>
       </tr>
       <tr>
         <td>Service Fee</td>
-        <td>$<%= service_fee %></td>
+        <td>$<%= @booking.service_fee %></td>
       </tr>
       <tr>
         <td>Total</td>
-        <td>$<%= total %></td>
+        <td>$<%= @booking.total %></td>
       </tr>
     </table>
   </section>
