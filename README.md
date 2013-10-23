@@ -3,7 +3,7 @@ Cloudbnb
 
 SUMMARY:
 --------
-[Cloudbnb](http://cloudbnb.herokuapp.com/) is a faithful Airbnb clone. Backed by Rails, it replicates many of the core user-facing features of Airbnb.
+[Cloudbnb](http://cloudbnb.herokuapp.com/) is a faithful Airbnb clone. Backed by Rails, it replicates many of the core user-facing features of Airbnb. It is important to note that I did all of the css myself without the use of Bootstrap or other framework.
 
 ###Search for Places to Stay with Multiple Filters
  * Filter location by location, room type, price range, guest count, available dates, amenities.
